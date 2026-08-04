@@ -1,0 +1,307 @@
+[2026-08-03T19:16:47.546Z] [SYSTEM] Starting deployment process...
+[2026-08-03T19:16:47.619Z] [INFO] Cloning branch main from repository...
+[2026-08-03T19:16:47.730Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\6e3dbac6-69f7-4d79-abd4-f480507911a5_6eee5cdb-4c0f-4370-b3ac-0f91a2bfc5d1'...
+[2026-08-03T19:16:48.753Z] [SUCCESS] Repository cloned successfully.
+[2026-08-03T19:16:48.769Z] [INFO] Detecting framework... Framework selected: Unknown
+[2026-08-03T19:16:48.770Z] [INFO] Validating Vite project structure...
+[2026-08-03T19:16:48.772Z] [INFO] Writing custom project Dockerfile configuration from DeployX UI...
+[2026-08-03T19:16:48.774Z] [SUCCESS] Custom Dockerfile configured.
+[2026-08-03T19:16:48.774Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-03T19:16:48.781Z] [INFO] Building image using Nixpacks: deployx-project-6e3dbac6-69f7-4d79-abd4-f480507911a5... This may take a few minutes.
+[2026-08-03T19:16:48.782Z] [INFO] Checking Docker availability...
+[2026-08-03T19:16:48.855Z] [OUTPUT] Docker version 29.6.2, build dfc4efb
+[2026-08-03T19:16:48.864Z] [SUCCESS] Docker OK
+[2026-08-03T19:16:48.864Z] [INFO] Checking Docker daemon...
+[2026-08-03T19:16:49.137Z] [OUTPUT] Client:
+[2026-08-03T19:16:49.137Z] [OUTPUT] Version:    29.6.2
+[2026-08-03T19:16:49.137Z] [OUTPUT] Context:    desktop-linux
+[2026-08-03T19:16:49.137Z] [OUTPUT] Debug Mode: false
+[2026-08-03T19:16:49.137Z] [OUTPUT] Plugins:
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v1.111.0
+[2026-08-03T19:16:49.138Z] [OUTPUT] agent: Docker AI Agent Runner (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v1.27.0
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v0.35.0-desktop.2
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v5.3.1
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  0.0.47
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v0.4.3
+[2026-08-03T19:16:49.138Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-03T19:16:49.138Z] [OUTPUT] dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+[2026-08-03T19:16:49.138Z] [OUTPUT] Version:  v0.0.7
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v0.2.31
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v1.4.0
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v0.43.3
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v1.2.6
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v0.6.9
+[2026-08-03T19:16:49.139Z] [OUTPUT] pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v0.2.0
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+[2026-08-03T19:16:49.139Z] [OUTPUT] Version:  v0.13.0
+[2026-08-03T19:16:49.139Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-03T19:16:49.139Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-03T19:16:49.140Z] [OUTPUT] Version:  v1.24.0
+[2026-08-03T19:16:49.140Z] [OUTPUT] Path:     C:\Users\Ayush Yash\.docker\cli-plugins\docker-scout.exe
+[2026-08-03T19:16:49.140Z] [OUTPUT] Server:
+[2026-08-03T19:16:49.140Z] [OUTPUT] Containers: 12
+[2026-08-03T19:16:49.140Z] [OUTPUT] Running: 12
+[2026-08-03T19:16:49.140Z] [OUTPUT] Paused: 0
+[2026-08-03T19:16:49.140Z] [OUTPUT] Stopped: 0
+[2026-08-03T19:16:49.140Z] [OUTPUT] Images: 12
+[2026-08-03T19:16:49.140Z] [OUTPUT] Server Version: 29.6.2
+[2026-08-03T19:16:49.140Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-03T19:16:49.140Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-03T19:16:49.140Z] [OUTPUT] Logging Driver: json-file
+[2026-08-03T19:16:49.140Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-03T19:16:49.142Z] [OUTPUT] Cgroup Version: 1
+[2026-08-03T19:16:49.142Z] [OUTPUT] Plugins:
+[2026-08-03T19:16:49.142Z] [OUTPUT] Volume: local
+[2026-08-03T19:16:49.142Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-03T19:16:49.142Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-03T19:16:49.142Z] [OUTPUT] CDI spec directories:
+[2026-08-03T19:16:49.143Z] [OUTPUT] /etc/cdi
+[2026-08-03T19:16:49.143Z] [OUTPUT] /var/run/cdi
+[2026-08-03T19:16:49.143Z] [OUTPUT] Discovered Devices:
+[2026-08-03T19:16:49.143Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-03T19:16:49.143Z] [OUTPUT] Swarm: inactive
+[2026-08-03T19:16:49.143Z] [OUTPUT] Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-08-03T19:16:49.144Z] [OUTPUT] Default Runtime: runc
+[2026-08-03T19:16:49.144Z] [OUTPUT] Init Binary: docker-init
+[2026-08-03T19:16:49.144Z] [OUTPUT] containerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+[2026-08-03T19:16:49.144Z] [OUTPUT] runc version: v1.3.6-0-g491b69ba
+[2026-08-03T19:16:49.144Z] [OUTPUT] init version: de40ad0
+[2026-08-03T19:16:49.144Z] [OUTPUT] Security Options:
+[2026-08-03T19:16:49.145Z] [OUTPUT] seccomp
+[2026-08-03T19:16:49.145Z] [OUTPUT] Profile: builtin
+[2026-08-03T19:16:49.145Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-03T19:16:49.145Z] [OUTPUT] OSType: linux
+[2026-08-03T19:16:49.145Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-03T19:16:49.145Z] [OUTPUT] Architecture: x86_64
+[2026-08-03T19:16:49.145Z] [OUTPUT] CPUs: 16
+[2026-08-03T19:16:49.145Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-03T19:16:49.145Z] [OUTPUT] Name: docker-desktop
+[2026-08-03T19:16:49.145Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-03T19:16:49.146Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-03T19:16:49.146Z] [OUTPUT] Debug Mode: false
+[2026-08-03T19:16:49.146Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-03T19:16:49.146Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-03T19:16:49.146Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-03T19:16:49.146Z] [OUTPUT] Labels:
+[2026-08-03T19:16:49.146Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-03T19:16:49.146Z] [OUTPUT] Experimental: false
+[2026-08-03T19:16:49.146Z] [OUTPUT] Insecure Registries:
+[2026-08-03T19:16:49.146Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-03T19:16:49.147Z] [OUTPUT] 127.0.0.0/8
+[2026-08-03T19:16:49.147Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-03T19:16:49.147Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-03T19:16:49.147Z] [OUTPUT] WARNING: Support for cgroup v1 is deprecated and planned to be removed by no later than May 2029 (https://github.com/moby/moby/issues/51111)
+[2026-08-03T19:16:49.147Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-03T19:16:49.147Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-03T19:16:49.148Z] [OUTPUT] ::1/128
+[2026-08-03T19:16:49.148Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-03T19:16:49.148Z] [OUTPUT] Firewall Backend: iptables
+[2026-08-03T19:16:49.156Z] [SUCCESS] Daemon Running
+[2026-08-03T19:16:49.223Z] [INFO] Checking Buildx...
+[2026-08-03T19:16:49.367Z] [OUTPUT] github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
+[2026-08-03T19:16:49.385Z] [SUCCESS] Buildx Installed
+[2026-08-03T19:16:49.650Z] [INFO] Docker Status Context:
+Docker Version: 29.6.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-03T19:16:49.651Z] [INFO] Generating Nixpacks build plan and Dockerfile...
+[2026-08-03T19:16:49.789Z] [OUTPUT] ╔══════════════════════════════ Nixpacks v1.41.0 ══════════════════════════════╗
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║ setup      │ pkgs: nginx                                                     ║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║            │ cmds: mkdir /etc/nginx/ /var/log/nginx/ /var/cache/nginx/       ║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║ start      │ [[ -z "${PORT}" ]] && echo "Environment variable PORT not       ║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║            │ found. Using PORT 80" || sed -i "s/0.0.0.0:80/$PORT/g"          ║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ║            │ /assets/nginx.conf && nginx -c /assets/nginx.conf               ║
+[2026-08-03T19:16:49.789Z] [OUTPUT] ╚══════════════════════════════════════════════════════════════════════════════╝
+[2026-08-03T19:16:49.792Z] [OUTPUT] Saved output to:
+[2026-08-03T19:16:49.793Z] [OUTPUT] C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\6e3dbac6-69f7-4d79-abd4-f480507911a5_6eee5cdb-4c0f-4370-b3ac-0f91a2bfc5d1
+[2026-08-03T19:16:49.802Z] [SUCCESS] Nixpacks plan generated.
+[2026-08-03T19:16:49.802Z] [INFO] Building Docker image...
+[2026-08-03T19:16:50.523Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-08-03T19:16:50.524Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-08-03T19:16:50.525Z] [OUTPUT] #1 transferring dockerfile: 763B 0.0s done
+[2026-08-03T19:16:50.526Z] [OUTPUT] #1 DONE 0.1s
+[2026-08-03T19:16:50.526Z] [OUTPUT] #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-03T19:16:52.736Z] [OUTPUT] #2 DONE 2.4s
+[2026-08-03T19:16:52.864Z] [OUTPUT] #3 [internal] load .dockerignore
+[2026-08-03T19:16:52.864Z] [OUTPUT] #3 transferring context: 118B done
+[2026-08-03T19:16:52.864Z] [OUTPUT] #3 DONE 0.1s
+[2026-08-03T19:16:52.864Z] [OUTPUT] #4 [internal] load build context
+[2026-08-03T19:16:53.015Z] [OUTPUT] #4 transferring context: 25.66kB 0.0s done
+[2026-08-03T19:16:53.015Z] [OUTPUT] #4 DONE 0.1s
+[2026-08-03T19:16:53.015Z] [OUTPUT] #5 [1/8] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+[2026-08-03T19:16:53.015Z] [OUTPUT] #5 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.1s done
+[2026-08-03T19:16:53.016Z] [OUTPUT] #5 DONE 0.2s
+[2026-08-03T19:16:53.143Z] [OUTPUT] #6 [2/8] WORKDIR /app/
+[2026-08-03T19:16:53.143Z] [OUTPUT] #6 DONE 0.1s
+[2026-08-03T19:16:53.144Z] [OUTPUT] #7 [3/8] COPY .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix
+[2026-08-03T19:16:53.144Z] [OUTPUT] #7 DONE 0.1s
+[2026-08-03T19:16:53.298Z] [OUTPUT] #8 [4/8] RUN nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d
+[2026-08-03T19:16:53.737Z] [OUTPUT] #8 0.589 unpacking 'https://github.com/NixOS/nixpkgs/archive/5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.tar.gz' into the Git cache...
+[2026-08-03T19:18:17.683Z] [OUTPUT] #8 84.53 installing '5148520bfab61f99fd25fb9ff7bfbb50dad3c9db-env'
+[2026-08-03T19:18:21.668Z] [OUTPUT] #8 88.52 these 3 derivations will be built:
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/y8fgajnv506phnyaphj9nywx8lssp1np-libraries.drv
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/jhqnl53k8zrgfjcd0jiyfcnihx8jwlaq-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db-env.drv
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/2bhmqpr8rng0khjaa2n5w369i94d757l-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db-env.drv
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52 these 76 paths will be fetched (40.98 MiB download, 224.73 MiB unpacked):
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/aj6gbshd8hvifpa1d8vy0iv688sm81wp-acl-2.3.1
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/srrs7gn04rwa4f6zhsjkdacxydwrmzhj-attr-2.5.1
+[2026-08-03T19:18:21.905Z] [OUTPUT] #8 88.52   /nix/store/vqvj60h076bhqj6977caz0pfxs6543nb-bash-5.2-p15
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/c0cvk07d05qa13jazzs7aiqb68szvdb8-brotli-1.0.9-lib
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/dc4lnyzdwfck9fc9h8h6n7di5yki5ilx-builder.pl
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/rmgpmxddh2hl3yl43f1kacrpd85cdrs4-bzip2-1.0.8
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/dwxydys9kcz5l2901asxdvh3qdh981b1-bzip2-1.0.8-bin
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/apn3p2b40xvirn7w740wv2gy330ppib5-coreutils-9.3
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/sv3gjxcixb5n2sic6kdn4r871fh951gz-dav1d-1.2.1
+[2026-08-03T19:18:21.906Z] [OUTPUT] #8 88.52   /nix/store/4ws2i5rqhj9ynj8b4gq20f5wm0ia4ncz-dejavu-fonts-minimal-2.37
+[2026-08-03T19:18:21.907Z] [OUTPUT] #8 88.52   /nix/store/5ca2vh08sq8m20mv4z3wd1lij6wngym0-diffutils-3.10
+[2026-08-03T19:18:21.907Z] [OUTPUT] #8 88.52   /nix/store/wgqxfhs0zj7fl182nk92rsslp796cjx4-ed-1.19
+[2026-08-03T19:18:21.907Z] [OUTPUT] #8 88.52   /nix/store/c0fdha4334wganpnf4k4kkskfix91k7x-expat-2.5.0
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/vzjkllqadhpmy9jbzqvq94xipvd5xk5f-file-5.45
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/xvhh3dzdqfaz78nhya1xildz2r38sy3s-findutils-4.9.0
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/r5ri95x49gj619pjw73fzd1bk855rxyz-fontconfig-2.14.2
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/flpxzyk5xp3lbhv5skifh62l1l6q02q3-fontconfig-2.14.2-lib
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/m4x37ybsl08x0iy7zd89z99286r79gij-freetype-2.13.1
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/3wwfqhdym0sbis4bad1may3ll8rki8y1-gcc-12.3.0-libgcc
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/3kcrg03ascmnw1vq7qn06q8wvkwpvc9v-gdk-pixbuf-2.42.10
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/h7zvh39yvxgf8firvx9zybyj85323ii4-gd-2.3.3
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/2acy470q6mf8if7ya1412j7h6j0piknz-geoip-1.6.12
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/47pwjwir6m3r0czs8zir5wzfvk7i5z6i-gawk-5.2.2
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/fl4hga1ccmidb1p808p86s7xm6l4f1j1-giflib-5.2.1
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/xpxln7rqi3pq4m0xpnawhxb2gs0mn1s0-gcc-12.3.0-lib
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/hl36mh6qdb8a7ymhql4qmfza3cdr24in-glib-2.76.4
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/knwyqhxbsxflilyy0mkpai2fp3lxarqz-gnu-config-2023-07-31
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/4hx292xs95frrd1hqwwfc2fpcz0niwgp-gnugrep-3.11
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/yqa5m326a0ynn4whm4fikyjfljfc6i3q-gmp-with-cxx-6.3.0
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/aw2fw9ag10wr9pf0qk4nk5sxi0q0bn56-glibc-2.37-8
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/s806iqg5vwsnp434i5whcn1rf605y9s6-gnumake-4.4.1
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/7snlgj0l0ys6lbcl5pyy8vwnmk26wh8x-gnused-4.9
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/d960k69nahxms669k9fl5rqhk0fkfzr5-gnutar-1.35
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/hbqq0way8sy1z4zd1h5nvmmv1v2cxfp1-gperftools-2.10
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/7nfcdvrmdbpms7wcrjjsqwkv07lswhli-gzip-1.13
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/l3g8nqz9jh93lpvr9zjarqz7a2ihq1q1-ilmbase-2.5.8
+[2026-08-03T19:18:21.908Z] [OUTPUT] #8 88.52   /nix/store/sk3yadd1ah9qw0n6k4zgigw6k93hc1gr-libX11-1.8.6
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/xlm5yy9iq15imz041rcfmfhjvrf5w1xy-libXau-1.0.11
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/aj4c653wzgvfl51r7jd6f11wad4982w0-libXdmcp-1.1.4
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/jgv9hv0b9j89sv77hh9p299r3d818swq-libXpm-3.5.16
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/146ky7cag1m9286477lx1mcvhcdivhh5-libaom-3.6.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/zkqz0jirgr3rkbjaj3wl6iz2zk7aks0v-libavif-0.11.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/a62i3x8s3h4kn9k7kw1c3by30zwbgzgi-libdeflate-1.18
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/xaz82jmpn8xj9y0v5jxxlrqrwpll832p-libffi-3.4.4
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/k8ivghpggjrq1n49xp8sj116i4sh8lia-libidn2-2.3.4
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/br495zx8bp47sggqfqxmvr3riqwxsyij-libjpeg-turbo-2.1.5.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/q7mhyzi33smln3h386inbai3fzkai78x-libjxl-0.8.2
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/dqhf4s5p6ds96kgqi1i4zr4pynz645p1-libpng-apng-1.6.39
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/gr3gbc3bdm6db173zy49jh7c6sbkk4yj-libselinux-3.3
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/qrqvxkxb9mv85wkzlnjphi36z99c57j1-libtiff-4.5.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/s2gi8pfjszy6rq3ydx0z1vwbbskw994i-libunistring-1.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/fayvwihc12xywzgv4wnf0cy3gkawvzl6-libwebp-1.3.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/ndjhhmxkh02f7bh32vj8w4cqz272dijy-libunwind-1.6.2
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/0r67h3vnm0fj7vmmmbkvbr7is3f8fzah-libvmaf-2.3.1
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/ir5iy6226s3yd7al697j20082q45242a-libxcb-1.15
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/jx3kvf6mk8qdaw30dbpngwmgm4p23xdb-libxcrypt-4.4.36
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/qxaj0gbpc58ng6pkhcjbn6q955m51ndh-libxml2-2.11.5
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/jhz2b48swgya2ija72wscaxh3r6c7f6n-libxslt-1.1.38
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/gn8hxrmw3plnp83z88wmxkjafl84sy69-libyuv-1787
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/wbwgim0i6dp747skhsjl6hw5a8xfzcbb-ncompress-5.0
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/nf658qiqq1scl6g799lmzn22s3igyhv2-nginx-1.24.0
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/vi9r25wiwqa4aflyxss9z690fmbv5wdy-openexr-2.5.8
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/2kl52k9kclb82bg8nvf4paxb3v972c70-openssl-3.0.10
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/63m0np3ypqr741nn1a3xmg39p6f97ix1-patch-2.7.6
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/v553h3r3f0xqxpvb9pgzx006qrmmv12m-patchelf-0.15.0
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/fc3f962bcy1v60yw280all8ri825mvlj-pcre-8.45
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/761y2sshd57g3jlgr32s6ac3cv1xhb4b-pcre2-10.42
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/1dlkj7j9av3x88l5ri9w08hdvkwmyznx-perl-5.38.0
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/mbj7giif6mf1hcda9w4kcr3s01rp66j7-stdenv-linux
+[2026-08-03T19:18:21.909Z] [OUTPUT] #8 88.52   /nix/store/fdgkgam7dgivvg4dzc12k3mlyx6sxrq5-update-autotools-gnu-config-scripts-hook
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/9lhvbvvm3s7kv7maak5vm7as6fwjgfa7-util-linux-minimal-2.39.2-lib
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/jbwb8d8l28lg9z0xzl784wyb9vlbwss6-xgcc-12.3.0-libgcc
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/kfrcs055nxbkwd6yy39h5xxyrj8wrb73-xz-5.4.4
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/b1rpgx8n48m6520gakkf9rsqf7kv7sra-xz-5.4.4-bin
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/4rx3vkkd91wkbhpflsplfga603cp1l1c-zlib-1.3
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.52   /nix/store/chp8vc854sn4g8p0baz16kbz8xcb35m3-zlib-ng-2.1.2
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/dc4lnyzdwfck9fc9h8h6n7di5yki5ilx-builder.pl' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/knwyqhxbsxflilyy0mkpai2fp3lxarqz-gnu-config-2023-07-31' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/4ws2i5rqhj9ynj8b4gq20f5wm0ia4ncz-dejavu-fonts-minimal-2.37' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/3wwfqhdym0sbis4bad1may3ll8rki8y1-gcc-12.3.0-libgcc' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/jbwb8d8l28lg9z0xzl784wyb9vlbwss6-xgcc-12.3.0-libgcc' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.54 copying path '/nix/store/s2gi8pfjszy6rq3ydx0z1vwbbskw994i-libunistring-1.1' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:21.910Z] [OUTPUT] #8 88.61 copying path '/nix/store/fdgkgam7dgivvg4dzc12k3mlyx6sxrq5-update-autotools-gnu-config-scripts-hook' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:22.005Z] [OUTPUT] #8 88.85 copying path '/nix/store/r5ri95x49gj619pjw73fzd1bk855rxyz-fontconfig-2.14.2' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:22.344Z] [OUTPUT] #8 89.19 copying path '/nix/store/k8ivghpggjrq1n49xp8sj116i4sh8lia-libidn2-2.3.4' from 'https://cache.nixos.org'...
+[2026-08-03T19:18:23.193Z] [OUTPUT] #8 90.04 copying path '/nix/store/aw2fw9ag10wr9pf0qk4nk5sxi0q0bn56-glibc-2.37-8' from 'https://cache.nixos.org'...
+[2026-08-03T19:20:53.519Z] [OUTPUT] #8 240.4 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0; retrying in 313 ms
+[2026-08-03T19:20:53.873Z] [OUTPUT] #8 240.7 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 702 ms
+[2026-08-03T19:20:54.912Z] [OUTPUT] #8 241.8 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 1321 ms
+[2026-08-03T19:20:56.253Z] [OUTPUT] #8 243.1 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 2052 ms
+[2026-08-03T19:20:58.332Z] [OUTPUT] #8 245.2 error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60)
+[2026-08-03T19:20:58.530Z] [OUTPUT] #8 245.2 error: some substitutes for the outputs of derivation '/nix/store/87cicz1l2i50a3ya751q3mi5gy7yviqd-bash-5.2-p15.drv' failed (usually happens due to networking issues); try '--fallback' to build derivation from source
+[2026-08-03T19:20:58.531Z] [OUTPUT] #8 245.2 error: 1 dependencies of derivation '/nix/store/2bhmqpr8rng0khjaa2n5w369i94d757l-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db-env.drv' failed to build
+[2026-08-03T19:20:58.637Z] [OUTPUT] #8 ERROR: process "/bin/bash -ol pipefail -c nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d" did not complete successfully: exit code: 1
+[2026-08-03T19:20:58.765Z] [OUTPUT] ------
+[2026-08-03T19:20:58.766Z] [OUTPUT] > [4/8] RUN nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d:
+[2026-08-03T19:20:58.766Z] [OUTPUT] 88.85 copying path '/nix/store/r5ri95x49gj619pjw73fzd1bk855rxyz-fontconfig-2.14.2' from 'https://cache.nixos.org'...
+[2026-08-03T19:20:58.766Z] [OUTPUT] 89.19 copying path '/nix/store/k8ivghpggjrq1n49xp8sj116i4sh8lia-libidn2-2.3.4' from 'https://cache.nixos.org'...
+[2026-08-03T19:20:58.766Z] [OUTPUT] 90.04 copying path '/nix/store/aw2fw9ag10wr9pf0qk4nk5sxi0q0bn56-glibc-2.37-8' from 'https://cache.nixos.org'...
+[2026-08-03T19:20:58.766Z] [OUTPUT] 240.4 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0; retrying in 313 ms
+[2026-08-03T19:20:58.766Z] [OUTPUT] 240.7 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 702 ms
+[2026-08-03T19:20:58.766Z] [OUTPUT] 241.8 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 1321 ms
+[2026-08-03T19:20:58.766Z] [OUTPUT] 243.1 warning: error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60) ; retrying in 2052 ms
+[2026-08-03T19:20:58.766Z] [OUTPUT] 245.2 error: unable to download 'https://cache.nixos.org/nar/0nba7qc1raa84m9vyqbjll84v1xqh6b9lh5rc2sikrd5hj7y1z7a.nar.xz': SSL peer certificate or SSH remote key was not OK (60)
+[2026-08-03T19:20:58.766Z] [OUTPUT] 245.2 error: some substitutes for the outputs of derivation '/nix/store/87cicz1l2i50a3ya751q3mi5gy7yviqd-bash-5.2-p15.drv' failed (usually happens due to networking issues); try '--fallback' to build derivation from source
+[2026-08-03T19:20:58.766Z] [OUTPUT] 245.2 error: 1 dependencies of derivation '/nix/store/2bhmqpr8rng0khjaa2n5w369i94d757l-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db-env.drv' failed to build
+[2026-08-03T19:20:58.766Z] [OUTPUT] ------
+[2026-08-03T19:20:58.780Z] [OUTPUT] --------------------
+[2026-08-03T19:20:58.780Z] [OUTPUT] 6 |
+[2026-08-03T19:20:58.780Z] [OUTPUT] Dockerfile:8
+[2026-08-03T19:20:58.780Z] [OUTPUT] 7 |     COPY .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix
+[2026-08-03T19:20:58.780Z] [OUTPUT] 8 | >>> RUN nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d
+[2026-08-03T19:20:58.780Z] [OUTPUT] 9 |
+[2026-08-03T19:20:58.780Z] [OUTPUT] 10 |     COPY .nixpacks/assets /assets/
+[2026-08-03T19:20:58.780Z] [OUTPUT] --------------------
+[2026-08-03T19:20:58.780Z] [OUTPUT] ERROR: failed to build: failed to solve: process "/bin/bash -ol pipefail -c nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d" did not complete successfully: exit code: 1
+[2026-08-03T19:20:58.781Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/rx2d32eyyrtxlixvc4m5kpkob
+[2026-08-03T19:20:58.799Z] [WARNING] BuildKit build failed. Retrying without BuildKit...
+[2026-08-03T19:20:58.799Z] [WARNING] Docker build retry 1/3...
+[2026-08-03T19:21:00.915Z] [OUTPUT] DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+[2026-08-03T19:21:00.915Z] [OUTPUT] BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+[2026-08-03T19:21:00.916Z] [OUTPUT] environment-variable.
+[2026-08-03T19:21:01.169Z] [OUTPUT] Sending build context to Docker daemon  35.33kB
+[2026-08-03T19:21:01.183Z] [OUTPUT] Step 1/12 : FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-03T19:21:01.290Z] [OUTPUT] failed to resolve reference "ghcr.io/railwayapp/nixpacks:ubuntu-1745885067": failed to do request: Head "https://ghcr.io/v2/railwayapp/nixpacks/manifests/ubuntu-1745885067": tls: failed to verify certificate: x509: certificate is not valid for any names, but wanted to match ghcr.io
+[2026-08-03T19:21:01.300Z] [ERROR] Docker build failed attempt 2. Reason: Command failed with code 1
+[2026-08-03T19:21:01.300Z] [WARNING] Docker build retry 2/3...
+[2026-08-03T19:21:03.412Z] [OUTPUT] DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+[2026-08-03T19:21:03.412Z] [OUTPUT] BuildKit is currently disabled; enable it by removing the DOCKER_BUILDKIT=0
+[2026-08-03T19:21:03.412Z] [OUTPUT] environment-variable.
+[2026-08-03T19:21:03.668Z] [OUTPUT] Sending build context to Docker daemon  35.33kB
+[2026-08-03T19:21:03.674Z] [OUTPUT] Step 1/12 : FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-03T19:21:03.759Z] [OUTPUT] failed to resolve reference "ghcr.io/railwayapp/nixpacks:ubuntu-1745885067": failed to do request: Head "https://ghcr.io/v2/railwayapp/nixpacks/manifests/ubuntu-1745885067": tls: failed to verify certificate: x509: certificate is not valid for any names, but wanted to match ghcr.io
+[2026-08-03T19:21:03.768Z] [ERROR] Docker build failed attempt 3. Reason: Command failed with code 1
+[2026-08-03T19:21:03.786Z] [ERROR] Deployment failed: Command failed with code 1

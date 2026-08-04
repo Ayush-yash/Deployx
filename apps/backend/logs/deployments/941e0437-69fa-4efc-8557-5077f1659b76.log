@@ -1,0 +1,161 @@
+[2026-08-01T12:33:10.190Z] [SYSTEM] Starting deployment process...
+[2026-08-01T12:33:10.255Z] [INFO] Cloning branch main from repository...
+[2026-08-01T12:33:10.481Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\323d676d-fda4-460e-b8e7-08bfdc7c9d53_941e0437-69fa-4efc-8557-5077f1659b76'...
+[2026-08-01T12:33:15.024Z] [SUCCESS] Repository cloned successfully.
+[2026-08-01T12:33:15.051Z] [INFO] Detecting framework... Framework selected: Node.js
+[2026-08-01T12:33:15.053Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-01T12:33:15.065Z] [INFO] Building image using Nixpacks: deployx-project-323d676d-fda4-460e-b8e7-08bfdc7c9d53... This may take a few minutes.
+[2026-08-01T12:33:15.065Z] [INFO] Checking Docker availability...
+[2026-08-01T12:33:15.174Z] [OUTPUT] Docker version
+[2026-08-01T12:33:15.175Z] [OUTPUT] 28.5.2, build ecc6942
+[2026-08-01T12:33:15.210Z] [SUCCESS] Docker OK
+[2026-08-01T12:33:15.210Z] [INFO] Checking Docker daemon...
+[2026-08-01T12:33:16.044Z] [OUTPUT] Client:
+[2026-08-01T12:33:16.044Z] [OUTPUT] Version:    28.5.2
+[2026-08-01T12:33:16.045Z] [OUTPUT] Context:    desktop-linux
+[2026-08-01T12:33:16.045Z] [OUTPUT] Debug Mode: false
+[2026-08-01T12:33:16.046Z] [OUTPUT] Plugins:
+[2026-08-01T12:33:16.046Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-01T12:33:16.046Z] [OUTPUT] Version:  v1.9.11
+[2026-08-01T12:33:16.046Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-01T12:33:16.046Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-01T12:33:16.047Z] [OUTPUT] Version:  v0.29.1-desktop.1
+[2026-08-01T12:33:16.047Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-01T12:33:16.047Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-01T12:33:16.047Z] [OUTPUT] Version:  v2.40.3-desktop.1
+[2026-08-01T12:33:16.047Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-01T12:33:16.047Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-01T12:33:16.047Z] [OUTPUT] Version:  0.0.45
+[2026-08-01T12:33:16.047Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-01T12:33:16.048Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-01T12:33:16.048Z] [OUTPUT] Version:  v0.2.0
+[2026-08-01T12:33:16.048Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-01T12:33:16.048Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-01T12:33:16.048Z] [OUTPUT] Version:  v0.2.31
+[2026-08-01T12:33:16.048Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-01T12:33:16.049Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-01T12:33:16.049Z] [OUTPUT] Version:  v1.4.0
+[2026-08-01T12:33:16.049Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-01T12:33:16.049Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-01T12:33:16.049Z] [OUTPUT] Version:  v0.27.0
+[2026-08-01T12:33:16.049Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-01T12:33:16.050Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-01T12:33:16.050Z] [OUTPUT] Version:  v0.1.46
+[2026-08-01T12:33:16.051Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-01T12:33:16.051Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-01T12:33:16.051Z] [OUTPUT] Version:  v0.5.17
+[2026-08-01T12:33:16.051Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-01T12:33:16.052Z] [OUTPUT] sandbox: Docker Sandbox (Docker Inc.)
+[2026-08-01T12:33:16.052Z] [OUTPUT] Version:  v0.5.3
+[2026-08-01T12:33:16.052Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-01T12:33:16.052Z] [OUTPUT] sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+[2026-08-01T12:33:16.052Z] [OUTPUT] Version:  0.6.0
+[2026-08-01T12:33:16.052Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+[2026-08-01T12:33:16.052Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-01T12:33:16.053Z] [OUTPUT] Version:  v1.18.3
+[2026-08-01T12:33:16.053Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
+[2026-08-01T12:33:16.053Z] [OUTPUT] Server:
+[2026-08-01T12:33:16.053Z] [OUTPUT] Containers: 30
+[2026-08-01T12:33:16.054Z] [OUTPUT] Running: 5
+[2026-08-01T12:33:16.054Z] [OUTPUT] Paused: 0
+[2026-08-01T12:33:16.054Z] [OUTPUT] Stopped: 25
+[2026-08-01T12:33:16.054Z] [OUTPUT] Images: 39
+[2026-08-01T12:33:16.054Z] [OUTPUT] Server Version: 28.5.2
+[2026-08-01T12:33:16.054Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-01T12:33:16.055Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-01T12:33:16.055Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-01T12:33:16.055Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-01T12:33:16.055Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-01T12:33:16.057Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-01T12:33:16.057Z] [OUTPUT] Logging Driver: json-file
+[2026-08-01T12:33:16.057Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-01T12:33:16.057Z] [OUTPUT] Cgroup Version: 1
+[2026-08-01T12:33:16.057Z] [OUTPUT] Plugins:
+[2026-08-01T12:33:16.057Z] [OUTPUT] Volume: local
+[2026-08-01T12:33:16.058Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-01T12:33:16.058Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-01T12:33:16.058Z] [OUTPUT] CDI spec directories:
+[2026-08-01T12:33:16.058Z] [OUTPUT] /etc/cdi
+[2026-08-01T12:33:16.059Z] [OUTPUT] /var/run/cdi
+[2026-08-01T12:33:16.059Z] [OUTPUT] Discovered Devices:
+[2026-08-01T12:33:16.059Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-01T12:33:16.059Z] [OUTPUT] Swarm: inactive
+[2026-08-01T12:33:16.059Z] [OUTPUT] Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-08-01T12:33:16.059Z] [OUTPUT] Default Runtime: runc
+[2026-08-01T12:33:16.059Z] [OUTPUT] Init Binary: docker-init
+[2026-08-01T12:33:16.060Z] [OUTPUT] containerd version: 442cb34bda9a6a0fed82a2ca7cade05c5c749582
+[2026-08-01T12:33:16.060Z] [OUTPUT] runc version: v1.3.3-0-gd842d771
+[2026-08-01T12:33:16.060Z] [OUTPUT] init version: de40ad0
+[2026-08-01T12:33:16.060Z] [OUTPUT] Security Options:
+[2026-08-01T12:33:16.060Z] [OUTPUT] seccomp
+[2026-08-01T12:33:16.060Z] [OUTPUT] Profile: builtin
+[2026-08-01T12:33:16.060Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-01T12:33:16.060Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-01T12:33:16.061Z] [OUTPUT] OSType: linux
+[2026-08-01T12:33:16.061Z] [OUTPUT] Architecture: x86_64
+[2026-08-01T12:33:16.061Z] [OUTPUT] CPUs: 16
+[2026-08-01T12:33:16.061Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-01T12:33:16.061Z] [OUTPUT] Name: docker-desktop
+[2026-08-01T12:33:16.061Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-01T12:33:16.061Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-01T12:33:16.061Z] [OUTPUT] Debug Mode: false
+[2026-08-01T12:33:16.061Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-01T12:33:16.062Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-01T12:33:16.062Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-01T12:33:16.062Z] [OUTPUT] Labels:
+[2026-08-01T12:33:16.062Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-01T12:33:16.062Z] [OUTPUT] Experimental: false
+[2026-08-01T12:33:16.063Z] [OUTPUT] Insecure Registries:
+[2026-08-01T12:33:16.063Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-01T12:33:16.063Z] [OUTPUT] ::1/128
+[2026-08-01T12:33:16.063Z] [OUTPUT] 127.0.0.0/8
+[2026-08-01T12:33:16.065Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-01T12:33:16.074Z] [SUCCESS] Daemon Running
+[2026-08-01T12:33:16.216Z] [INFO] Checking Buildx...
+[2026-08-01T12:33:16.512Z] [OUTPUT] github.com/docker/buildx v0.29.1-desktop.1 28f6246ff24e2c05095e8741e48c48dcb2d3b4bc
+[2026-08-01T12:33:16.552Z] [SUCCESS] Buildx Installed
+[2026-08-01T12:33:17.181Z] [INFO] Docker Status Context:
+Docker Version: 28.5.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-01T12:33:32.389Z] [OUTPUT] ╔════════ Nixpacks v1.41.0 ═══════╗
+[2026-08-01T12:33:32.389Z] [OUTPUT] ║ setup      │ nodejs_24, npm-9_x ║
+[2026-08-01T12:33:32.389Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:33:32.389Z] [OUTPUT] ║ install    │ npm ci             ║
+[2026-08-01T12:33:32.389Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:33:32.389Z] [OUTPUT] ║ start      │ node index.js      ║
+[2026-08-01T12:33:32.390Z] [OUTPUT] ╚═════════════════════════════════╝
+[2026-08-01T12:33:33.670Z] [OUTPUT] ERROR: BuildKit is enabled but the buildx component is missing or broken.
+[2026-08-01T12:33:33.671Z] [OUTPUT] Install the buildx component to build images with BuildKit:
+[2026-08-01T12:33:33.671Z] [OUTPUT] https://docs.docker.com/go/buildx/
+[2026-08-01T12:33:33.673Z] [OUTPUT] Error: Docker build failed
+[2026-08-01T12:33:40.073Z] [WARNING] BuildKit build failed. Retrying without BuildKit...
+[2026-08-01T12:33:40.073Z] [WARNING] Retry 1/3...
+[2026-08-01T12:33:50.032Z] [OUTPUT] ╔════════ Nixpacks v1.41.0 ═══════╗
+[2026-08-01T12:33:50.032Z] [OUTPUT] ║ setup      │ nodejs_24, npm-9_x ║
+[2026-08-01T12:33:50.033Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:33:50.033Z] [OUTPUT] ║ install    │ npm ci             ║
+[2026-08-01T12:33:50.033Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:33:50.033Z] [OUTPUT] ║ start      │ node index.js      ║
+[2026-08-01T12:33:50.033Z] [OUTPUT] ╚═════════════════════════════════╝
+[2026-08-01T12:33:51.207Z] [OUTPUT] ERROR: BuildKit is enabled but the buildx component is missing or broken.
+[2026-08-01T12:33:51.207Z] [OUTPUT] Install the buildx component to build images with BuildKit:
+[2026-08-01T12:33:51.207Z] [OUTPUT] https://docs.docker.com/go/buildx/
+[2026-08-01T12:33:51.213Z] [OUTPUT] Error: Docker build failed
+[2026-08-01T12:33:54.076Z] [ERROR] Nixpacks build failed attempt 2. Reason: Command failed with code 1
+[2026-08-01T12:33:54.076Z] [WARNING] Retry 2/3...
+[2026-08-01T12:34:02.284Z] [OUTPUT] ╔════════ Nixpacks v1.41.0 ═══════╗
+[2026-08-01T12:34:02.284Z] [OUTPUT] ║ setup      │ nodejs_24, npm-9_x ║
+[2026-08-01T12:34:02.285Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:34:02.285Z] [OUTPUT] ║ install    │ npm ci             ║
+[2026-08-01T12:34:02.285Z] [OUTPUT] ║─────────────────────────────────║
+[2026-08-01T12:34:02.285Z] [OUTPUT] ║ start      │ node index.js      ║
+[2026-08-01T12:34:02.285Z] [OUTPUT] ╚═════════════════════════════════╝
+[2026-08-01T12:34:02.928Z] [OUTPUT] ERROR: BuildKit is enabled but the buildx component is missing or broken.
+[2026-08-01T12:34:02.929Z] [OUTPUT] Install the buildx component to build images with BuildKit:
+[2026-08-01T12:34:02.929Z] [OUTPUT] https://docs.docker.com/go/buildx/
+[2026-08-01T12:34:02.931Z] [OUTPUT] Error: Docker build failed
+[2026-08-01T12:34:05.373Z] [ERROR] Nixpacks build failed attempt 3. Reason: Command failed with code 1
+[2026-08-01T12:34:05.402Z] [ERROR] Deployment failed: Command failed with code 1

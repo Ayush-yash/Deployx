@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400;
+  }
+  .bg-animated-gradient {
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #020617, #064e3b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Custom modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/50 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

@@ -1,0 +1,49 @@
+[2026-07-31T12:49:29.657Z] [SYSTEM] Starting deployment process...
+[2026-07-31T12:49:29.684Z] [INFO] Cloning branch main from repository...
+[2026-07-31T12:49:29.807Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\a6722813-2bb4-4baa-a66a-d41a78534e1a_3e9fa69a-50e8-40b1-a84a-e1a3f6014e81'...
+[2026-07-31T12:49:30.982Z] [SUCCESS] Repository cloned successfully.
+[2026-07-31T12:49:30.995Z] [INFO] Detecting framework... Framework selected: Unknown
+[2026-07-31T12:49:30.995Z] [INFO] Writing project Dockerfile configuration...
+[2026-07-31T12:49:30.997Z] [SUCCESS] Dockerfile configured.
+[2026-07-31T12:49:30.997Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-07-31T12:49:31.005Z] [INFO] Building Docker image: deployx-project-a6722813-2bb4-4baa-a66a-d41a78534e1a... This may take a minute.
+[2026-07-31T12:49:31.747Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-07-31T12:49:31.747Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-07-31T12:49:31.747Z] [OUTPUT] #1 transferring dockerfile: 125B 0.0s done
+[2026-07-31T12:49:31.748Z] [OUTPUT] #1 DONE 0.1s
+[2026-07-31T12:49:31.748Z] [OUTPUT] #2 [internal] load metadata for docker.io/library/alpine:latest
+[2026-07-31T12:49:33.435Z] [OUTPUT] #2 DONE 1.8s
+[2026-07-31T12:49:33.572Z] [OUTPUT] #3 [internal] load .dockerignore
+[2026-07-31T12:49:33.572Z] [OUTPUT] #3 transferring context: 118B done
+[2026-07-31T12:49:33.573Z] [OUTPUT] #3 DONE 0.1s
+[2026-07-31T12:49:33.573Z] [OUTPUT] #4 [internal] load build context
+[2026-07-31T12:49:33.680Z] [OUTPUT] #4 transferring context: 23.07kB 0.1s done
+[2026-07-31T12:49:33.680Z] [OUTPUT] #4 DONE 0.2s
+[2026-07-31T12:49:33.680Z] [OUTPUT] #5 [1/3] FROM docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
+[2026-07-31T12:49:33.680Z] [OUTPUT] #5 resolve docker.io/library/alpine:latest@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b 0.1s done
+[2026-07-31T12:49:33.681Z] [OUTPUT] #5 DONE 0.1s
+[2026-07-31T12:49:33.831Z] [OUTPUT] #6 [2/3] WORKDIR /app
+[2026-07-31T12:49:33.831Z] [OUTPUT] #7 [3/3] COPY . .
+[2026-07-31T12:49:33.831Z] [OUTPUT] #6 CACHED
+[2026-07-31T12:49:33.831Z] [OUTPUT] #7 CACHED
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting to image
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting layers done
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting manifest sha256:5ca55bbfd905af97c977fb9a13ac6bda94ff73ebb47ed8ac2605f8599f50634f done
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting config sha256:7e190eb7b7e9243316d1db468cbbe77573a697514ee6cac7cbe9779ac720c2d1 done
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting attestation manifest sha256:09caa66db6c75314433f55ed2b167fcc6f180df5297f813e1168d4fb4b2a0193 0.1s done
+[2026-07-31T12:49:33.831Z] [OUTPUT] #8 exporting manifest list sha256:d72bec8f893d46c5490ea9905169aa3ca093a2c10120ae0b2a8f2578c0d5a1c7
+[2026-07-31T12:49:34.056Z] [OUTPUT] #8 exporting manifest list sha256:d72bec8f893d46c5490ea9905169aa3ca093a2c10120ae0b2a8f2578c0d5a1c7 0.0s done
+[2026-07-31T12:49:34.056Z] [OUTPUT] #8 naming to docker.io/library/deployx-project-a6722813-2bb4-4baa-a66a-d41a78534e1a:latest done
+[2026-07-31T12:49:34.056Z] [OUTPUT] #8 unpacking to docker.io/library/deployx-project-a6722813-2bb4-4baa-a66a-d41a78534e1a:latest 0.0s done
+[2026-07-31T12:49:34.056Z] [OUTPUT] #8 DONE 0.2s
+[2026-07-31T12:49:34.105Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/x6v4wxt76gutte4b925qvz3w8
+[2026-07-31T12:49:34.143Z] [SUCCESS] Docker image built successfully.
+[2026-07-31T12:49:34.576Z] [ERROR] Deployment failed: 
+Invalid `prisma.deployment.update()` invocation in
+C:\Users\Ayush Yash\Documents\Internal_devops\Cloud managment\apps\backend\src\services\deployment.service.ts:27:31
+
+  24 let workspace = '';
+  25 
+  26 const updateProgress = async (step: string, percent: number) => {
+→ 27   await prisma.deployment.update(
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.

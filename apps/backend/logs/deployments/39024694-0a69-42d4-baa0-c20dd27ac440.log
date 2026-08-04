@@ -1,0 +1,119 @@
+[2026-07-31T00:51:54.492Z] [SYSTEM] Starting deployment process...
+[2026-07-31T00:51:54.548Z] [INFO] Cloning branch main from repository...
+[2026-07-31T00:51:54.653Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\35314313-7e7e-4c45-982f-2141511d0244_39024694-0a69-42d4-baa0-c20dd27ac440'...
+[2026-07-31T00:51:55.753Z] [SUCCESS] Repository cloned successfully.
+[2026-07-31T00:51:55.763Z] [INFO] Detecting framework... Framework selected: React (Vite)
+[2026-07-31T00:51:55.763Z] [INFO] Writing project Dockerfile configuration...
+[2026-07-31T00:51:55.765Z] [SUCCESS] Dockerfile configured.
+[2026-07-31T00:51:55.765Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-07-31T00:51:55.774Z] [INFO] Building Docker image: deployx-project-35314313-7e7e-4c45-982f-2141511d0244... This may take a minute.
+[2026-07-31T00:51:56.514Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-07-31T00:51:56.514Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-07-31T00:51:56.514Z] [OUTPUT] #1 transferring dockerfile: 293B 0.0s done
+[2026-07-31T00:51:56.514Z] [OUTPUT] #1 DONE 0.1s
+[2026-07-31T00:51:56.515Z] [OUTPUT] #2 [internal] load metadata for docker.io/library/nginx:alpine
+[2026-07-31T00:51:56.515Z] [OUTPUT] #2 DONE 0.1s
+[2026-07-31T00:51:56.515Z] [OUTPUT] #3 [internal] load metadata for docker.io/library/node:18-alpine
+[2026-07-31T00:51:58.156Z] [OUTPUT] #3 DONE 1.7s
+[2026-07-31T00:51:58.259Z] [OUTPUT] #4 [internal] load .dockerignore
+[2026-07-31T00:51:58.259Z] [OUTPUT] #4 transferring context: 118B 0.0s done
+[2026-07-31T00:51:58.259Z] [OUTPUT] #4 DONE 0.1s
+[2026-07-31T00:51:58.260Z] [OUTPUT] #5 [internal] load build context
+[2026-07-31T00:51:58.260Z] [OUTPUT] #5 DONE 0.0s
+[2026-07-31T00:51:58.260Z] [OUTPUT] #6 [stage-1 1/2] FROM docker.io/library/nginx:alpine@sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752
+[2026-07-31T00:51:58.260Z] [OUTPUT] #6 resolve docker.io/library/nginx:alpine@sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752
+[2026-07-31T00:51:58.361Z] [OUTPUT] #6 resolve docker.io/library/nginx:alpine@sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752 0.1s done
+[2026-07-31T00:51:58.361Z] [OUTPUT] #6 CACHED
+[2026-07-31T00:51:58.362Z] [OUTPUT] #7 [builder 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+[2026-07-31T00:51:58.362Z] [OUTPUT] #7 resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e 0.1s done
+[2026-07-31T00:51:58.362Z] [OUTPUT] #7 DONE 0.1s
+[2026-07-31T00:51:58.362Z] [OUTPUT] #5 [internal] load build context
+[2026-07-31T00:51:58.625Z] [OUTPUT] #5 transferring context: 161.73kB 0.2s done
+[2026-07-31T00:51:58.626Z] [OUTPUT] #5 DONE 0.2s
+[2026-07-31T00:51:58.626Z] [OUTPUT] #8 [builder 2/6] WORKDIR /app
+[2026-07-31T00:51:58.626Z] [OUTPUT] #8 CACHED
+[2026-07-31T00:51:58.626Z] [OUTPUT] #9 [builder 3/6] COPY package*.json ./
+[2026-07-31T00:51:58.626Z] [OUTPUT] #9 DONE 0.1s
+[2026-07-31T00:51:58.779Z] [OUTPUT] #10 [builder 4/6] RUN npm ci
+[2026-07-31T00:51:59.595Z] [OUTPUT] #10 0.966 npm warn EBADENGINE Unsupported engine {
+[2026-07-31T00:51:59.595Z] [OUTPUT] #10 0.966 npm warn EBADENGINE   package: '@vitejs/plugin-react@5.1.1',
+[2026-07-31T00:51:59.596Z] [OUTPUT] #10 0.966 npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+[2026-07-31T00:51:59.596Z] [OUTPUT] #10 0.966 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+[2026-07-31T00:51:59.596Z] [OUTPUT] #10 0.966 npm warn EBADENGINE }
+[2026-07-31T00:51:59.748Z] [OUTPUT] #10 0.967 npm warn EBADENGINE Unsupported engine {
+[2026-07-31T00:51:59.748Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   package: 'react-router@7.10.1',
+[2026-07-31T00:51:59.748Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   required: { node: '>=20.0.0' },
+[2026-07-31T00:51:59.748Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+[2026-07-31T00:51:59.748Z] [OUTPUT] #10 0.967 npm warn EBADENGINE }
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.967 npm warn EBADENGINE Unsupported engine {
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   package: 'react-router-dom@7.10.1',
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   required: { node: '>=20.0.0' },
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.967 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.967 npm warn EBADENGINE }
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.968 npm warn EBADENGINE Unsupported engine {
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.968 npm warn EBADENGINE   package: 'vite@7.2.6',
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.968 npm warn EBADENGINE   required: { node: '^20.19.0 || >=22.12.0' },
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.968 npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+[2026-07-31T00:51:59.749Z] [OUTPUT] #10 0.968 npm warn EBADENGINE }
+[2026-07-31T00:52:16.169Z] [OUTPUT] #10 17.54
+[2026-07-31T00:52:16.169Z] [OUTPUT] #10 17.54 added 138 packages, and audited 139 packages in 17s
+[2026-07-31T00:52:16.399Z] [OUTPUT] #10 17.54
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 10 vulnerabilities (1 low, 1 moderate, 8 high)
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 To address all issues, run:
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62   npm audit fix
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 Run `npm audit` for details.
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 npm notice
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 npm notice New major version of npm available! 10.8.2 -> 12.0.2
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.54   run `npm fund` for details
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.54 18 packages are looking for funding
+[2026-07-31T00:52:16.401Z] [OUTPUT] #10 17.62 npm notice
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62
+[2026-07-31T00:52:16.401Z] [OUTPUT] #10 17.62 npm notice To update run: npm install -g npm@12.0.2
+[2026-07-31T00:52:16.400Z] [OUTPUT] #10 17.62 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+[2026-07-31T00:52:19.965Z] [OUTPUT] #10 DONE 21.3s
+[2026-07-31T00:52:20.104Z] [OUTPUT] #11 [builder 5/6] COPY . .
+[2026-07-31T00:52:20.104Z] [OUTPUT] #11 DONE 0.1s
+[2026-07-31T00:52:20.259Z] [OUTPUT] #12 [builder 6/6] RUN npm run build
+[2026-07-31T00:52:20.687Z] [OUTPUT] #12 0.575
+[2026-07-31T00:52:20.688Z] [OUTPUT] #12 0.575 > shopkaro-react@1.0.0 build
+[2026-07-31T00:52:20.688Z] [OUTPUT] #12 0.575 > vite build
+[2026-07-31T00:52:20.688Z] [OUTPUT] #12 0.575
+[2026-07-31T00:52:20.892Z] [OUTPUT] #12 0.634 You are using Node.js 18.20.8. Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version.
+[2026-07-31T00:52:20.937Z] [OUTPUT] #12 0.828 vite v7.2.6 building client environment for production...
+[2026-07-31T00:52:21.064Z] [OUTPUT] #12 0.906 ✓ 0 modules transformed.
+[2026-07-31T00:52:21.065Z] [OUTPUT] #12 0.910 ✗ Build failed in 41ms
+[2026-07-31T00:52:21.065Z] [OUTPUT] #12 0.910 error during build:
+[2026-07-31T00:52:21.065Z] [OUTPUT] #12 0.910 [vite:build-html] Failed to resolve /src/main.jsx from /app/index.html
+[2026-07-31T00:52:21.066Z] [OUTPUT] #12 0.910 file: /app/index.html
+[2026-07-31T00:52:21.066Z] [OUTPUT] #12 0.910     at file:///app/node_modules/vite/dist/node/chunks/config.js:23909:64
+[2026-07-31T00:52:21.066Z] [OUTPUT] #12 0.910     at async Promise.all (index 0)
+[2026-07-31T00:52:21.066Z] [OUTPUT] #12 0.910     at async Object.handler (file:///app/node_modules/vite/dist/node/chunks/config.js:24006:5)
+[2026-07-31T00:52:21.066Z] [OUTPUT] #12 0.910     at async transform (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21163:16)
+[2026-07-31T00:52:21.067Z] [OUTPUT] #12 0.910     at async ModuleLoader.addModuleSource (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21377:36)
+[2026-07-31T00:52:21.067Z] [OUTPUT] #12 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+[2026-07-31T00:52:21.166Z] [OUTPUT] ------
+[2026-07-31T00:52:21.166Z] [OUTPUT] > [builder 6/6] RUN npm run build:
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.906 ✓ 0 modules transformed.
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910 ✗ Build failed in 41ms
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910 error during build:
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910 [vite:build-html] Failed to resolve /src/main.jsx from /app/index.html
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910 file: /app/index.html
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910     at file:///app/node_modules/vite/dist/node/chunks/config.js:23909:64
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910     at async Promise.all (index 0)
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910     at async Object.handler (file:///app/node_modules/vite/dist/node/chunks/config.js:24006:5)
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910     at async transform (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21163:16)
+[2026-07-31T00:52:21.167Z] [OUTPUT] 0.910     at async ModuleLoader.addModuleSource (file:///app/node_modules/rollup/dist/es/shared/node-entry.js:21377:36)
+[2026-07-31T00:52:21.167Z] [OUTPUT] ------
+[2026-07-31T00:52:21.181Z] [OUTPUT] Dockerfile:9
+[2026-07-31T00:52:21.181Z] [OUTPUT] --------------------
+[2026-07-31T00:52:21.181Z] [OUTPUT] 7 |     RUN npm ci
+[2026-07-31T00:52:21.181Z] [OUTPUT] 8 |     COPY . .
+[2026-07-31T00:52:21.181Z] [OUTPUT] 9 | >>> RUN npm run build
+[2026-07-31T00:52:21.181Z] [OUTPUT] 10 |
+[2026-07-31T00:52:21.181Z] [OUTPUT] 11 |     # Production Stage
+[2026-07-31T00:52:21.181Z] [OUTPUT] --------------------
+[2026-07-31T00:52:21.181Z] [OUTPUT] ERROR: failed to build: failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+[2026-07-31T00:52:21.181Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/1txesqvhx0hf1u305ul38oeip
+[2026-07-31T00:52:21.209Z] [ERROR] Deployment failed: Command failed with code 1

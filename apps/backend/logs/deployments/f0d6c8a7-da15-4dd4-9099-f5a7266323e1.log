@@ -1,0 +1,347 @@
+[2026-08-04T04:37:39.839Z] [SYSTEM] Starting deployment process...
+[2026-08-04T04:37:39.902Z] [INFO] Cloning branch main from repository...
+[2026-08-04T04:37:40.011Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\221774a5-cc39-4ffa-a92a-968103f0799a_f0d6c8a7-da15-4dd4-9099-f5a7266323e1'...
+[2026-08-04T04:37:41.377Z] [SUCCESS] Repository cloned successfully.
+[2026-08-04T04:37:41.390Z] [INFO] Detecting framework... Framework selected: React (Vite)
+[2026-08-04T04:37:41.392Z] [INFO] Validating Vite project structure...
+[2026-08-04T04:37:41.394Z] [WARNING] Referenced entry file not found: /src/main.tsx
+[2026-08-04T04:37:41.404Z] [WARNING] Vite entry file not found. Creating a placeholder entry file to prevent build failure...
+[2026-08-04T04:37:41.410Z] [SUCCESS] Created placeholder src/main.tsx and patched index.html.
+[2026-08-04T04:37:41.411Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-04T04:37:41.417Z] [INFO] Building image using Nixpacks: deployx-project-221774a5-cc39-4ffa-a92a-968103f0799a... This may take a few minutes.
+[2026-08-04T04:37:41.417Z] [INFO] Checking Docker availability...
+[2026-08-04T04:37:41.500Z] [OUTPUT] Docker version
+[2026-08-04T04:37:41.501Z] [OUTPUT] 29.6.2, build dfc4efb
+[2026-08-04T04:37:41.512Z] [SUCCESS] Docker OK
+[2026-08-04T04:37:41.512Z] [INFO] Checking Docker daemon...
+[2026-08-04T04:37:42.074Z] [OUTPUT] Client:
+[2026-08-04T04:37:42.075Z] [OUTPUT] Version:    29.6.2
+[2026-08-04T04:37:42.075Z] [OUTPUT] Context:    desktop-linux
+[2026-08-04T04:37:42.075Z] [OUTPUT] Debug Mode: false
+[2026-08-04T04:37:42.075Z] [OUTPUT] Plugins:
+[2026-08-04T04:37:42.075Z] [OUTPUT] agent: Docker AI Agent Runner (Docker Inc.)
+[2026-08-04T04:37:42.075Z] [OUTPUT] Version:  v1.111.0
+[2026-08-04T04:37:42.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+[2026-08-04T04:37:42.075Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-04T04:37:42.075Z] [OUTPUT] Version:  v1.27.0
+[2026-08-04T04:37:42.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-04T04:37:42.075Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-04T04:37:42.075Z] [OUTPUT] Version:  v0.35.0-desktop.2
+[2026-08-04T04:37:42.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-04T04:37:42.075Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-04T04:37:42.075Z] [OUTPUT] Version:  v5.3.1
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  0.0.47
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v0.4.3
+[2026-08-04T04:37:42.076Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v0.0.7
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v0.2.31
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v1.4.0
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v0.43.3
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-04T04:37:42.076Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v0.6.9
+[2026-08-04T04:37:42.076Z] [OUTPUT] Version:  v1.2.6
+[2026-08-04T04:37:42.076Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-04T04:37:42.076Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-04T04:37:42.077Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-04T04:37:42.077Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-04T04:37:42.077Z] [OUTPUT] WARNING: Support for cgroup v1 is deprecated and planned to be removed by no later than May 2029 (https://github.com/moby/moby/issues/51111)
+[2026-08-04T04:37:42.077Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-04T04:37:42.077Z] [OUTPUT] pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+[2026-08-04T04:37:42.077Z] [OUTPUT] Version:  v0.2.0
+[2026-08-04T04:37:42.078Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+[2026-08-04T04:37:42.078Z] [OUTPUT] sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+[2026-08-04T04:37:42.078Z] [OUTPUT] Version:  v0.13.0
+[2026-08-04T04:37:42.078Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-04T04:37:42.078Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-04T04:37:42.078Z] [OUTPUT] Version:  v1.24.0
+[2026-08-04T04:37:42.078Z] [OUTPUT] Path:     C:\Users\Ayush Yash\.docker\cli-plugins\docker-scout.exe
+[2026-08-04T04:37:42.078Z] [OUTPUT] Server:
+[2026-08-04T04:37:42.078Z] [OUTPUT] Containers: 18
+[2026-08-04T04:37:42.078Z] [OUTPUT] Running: 18
+[2026-08-04T04:37:42.078Z] [OUTPUT] Paused: 0
+[2026-08-04T04:37:42.078Z] [OUTPUT] Stopped: 0
+[2026-08-04T04:37:42.078Z] [OUTPUT] Images: 21
+[2026-08-04T04:37:42.078Z] [OUTPUT] Server Version: 29.6.2
+[2026-08-04T04:37:42.078Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-04T04:37:42.078Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-04T04:37:42.078Z] [OUTPUT] Logging Driver: json-file
+[2026-08-04T04:37:42.078Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-04T04:37:42.078Z] [OUTPUT] Cgroup Version: 1
+[2026-08-04T04:37:42.078Z] [OUTPUT] Volume: local
+[2026-08-04T04:37:42.078Z] [OUTPUT] Plugins:
+[2026-08-04T04:37:42.078Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-04T04:37:42.078Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-04T04:37:42.078Z] [OUTPUT] CDI spec directories:
+[2026-08-04T04:37:42.078Z] [OUTPUT] /etc/cdi
+[2026-08-04T04:37:42.078Z] [OUTPUT] /var/run/cdi
+[2026-08-04T04:37:42.078Z] [OUTPUT] Discovered Devices:
+[2026-08-04T04:37:42.078Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-04T04:37:42.078Z] [OUTPUT] Swarm: inactive
+[2026-08-04T04:37:42.078Z] [OUTPUT] Runtimes: runc io.containerd.runc.v2 nvidia
+[2026-08-04T04:37:42.078Z] [OUTPUT] Default Runtime: runc
+[2026-08-04T04:37:42.078Z] [OUTPUT] Init Binary: docker-init
+[2026-08-04T04:37:42.078Z] [OUTPUT] containerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+[2026-08-04T04:37:42.078Z] [OUTPUT] runc version: v1.3.6-0-g491b69ba
+[2026-08-04T04:37:42.078Z] [OUTPUT] init version: de40ad0
+[2026-08-04T04:37:42.078Z] [OUTPUT] seccomp
+[2026-08-04T04:37:42.078Z] [OUTPUT] Security Options:
+[2026-08-04T04:37:42.078Z] [OUTPUT] Profile: builtin
+[2026-08-04T04:37:42.078Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-04T04:37:42.078Z] [OUTPUT] OSType: linux
+[2026-08-04T04:37:42.078Z] [OUTPUT] Architecture: x86_64
+[2026-08-04T04:37:42.078Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-04T04:37:42.078Z] [OUTPUT] CPUs: 16
+[2026-08-04T04:37:42.078Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-04T04:37:42.079Z] [OUTPUT] Name: docker-desktop
+[2026-08-04T04:37:42.079Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-04T04:37:42.079Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-04T04:37:42.079Z] [OUTPUT] Debug Mode: false
+[2026-08-04T04:37:42.079Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-04T04:37:42.079Z] [OUTPUT] Labels:
+[2026-08-04T04:37:42.079Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-04T04:37:42.079Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-04T04:37:42.079Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-04T04:37:42.079Z] [OUTPUT] Experimental: false
+[2026-08-04T04:37:42.079Z] [OUTPUT] Insecure Registries:
+[2026-08-04T04:37:42.079Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-04T04:37:42.079Z] [OUTPUT] 127.0.0.0/8
+[2026-08-04T04:37:42.079Z] [OUTPUT] ::1/128
+[2026-08-04T04:37:42.079Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-04T04:37:42.079Z] [OUTPUT] Firewall Backend: iptables
+[2026-08-04T04:37:42.096Z] [SUCCESS] Daemon Running
+[2026-08-04T04:37:42.170Z] [INFO] Checking Buildx...
+[2026-08-04T04:37:42.374Z] [OUTPUT] github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
+[2026-08-04T04:37:42.416Z] [SUCCESS] Buildx Installed
+[2026-08-04T04:37:42.785Z] [INFO] Docker Status Context:
+Docker Version: 29.6.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-04T04:37:42.786Z] [INFO] Generating Nixpacks build plan and Dockerfile...
+[2026-08-04T04:37:43.576Z] [OUTPUT] ╔══════════════════════════════ Nixpacks v1.41.0 ══════════════════════════════╗
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║ setup      │ nodejs_18, pnpm-9_x                                             ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║ caddy      │ pkgs: caddy                                                     ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║            │ cmds: caddy fmt --overwrite /assets/Caddyfile                   ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║ install    │ pnpm i --frozen-lockfile                                        ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║ build      │ pnpm run build                                                  ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║ start      │ exec caddy run --config /assets/Caddyfile --adapter caddyfile   ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ║            │ 2>&1                                                            ║
+[2026-08-04T04:37:43.576Z] [OUTPUT] ╚══════════════════════════════════════════════════════════════════════════════╝
+[2026-08-04T04:37:43.579Z] [OUTPUT] Saved output to:
+[2026-08-04T04:37:43.579Z] [OUTPUT] C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\221774a5-cc39-4ffa-a92a-968103f0799a_f0d6c8a7-da15-4dd4-9099-f5a7266323e1
+[2026-08-04T04:37:43.586Z] [SUCCESS] Nixpacks plan generated.
+[2026-08-04T04:37:43.586Z] [INFO] Building Docker image...
+[2026-08-04T04:37:44.337Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-08-04T04:37:44.337Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-08-04T04:37:44.338Z] [OUTPUT] #1 transferring dockerfile: 1.63kB 0.0s done
+[2026-08-04T04:37:44.338Z] [OUTPUT] #1 DONE 0.1s
+[2026-08-04T04:37:44.339Z] [OUTPUT] #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-04T04:37:45.031Z] [OUTPUT] #2 DONE 0.8s
+[2026-08-04T04:37:45.175Z] [OUTPUT] #3 [internal] load .dockerignore
+[2026-08-04T04:37:45.177Z] [OUTPUT] #3 transferring context: 118B done
+[2026-08-04T04:37:45.177Z] [OUTPUT] #3 DONE 0.1s
+[2026-08-04T04:37:45.178Z] [OUTPUT] #4 [internal] load build context
+[2026-08-04T04:37:45.329Z] [OUTPUT] #4 transferring context: 573.19kB 0.1s done
+[2026-08-04T04:37:45.330Z] [OUTPUT] #4 DONE 0.1s
+[2026-08-04T04:37:45.330Z] [OUTPUT] #5 [stage-0  1/15] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+[2026-08-04T04:37:45.330Z] [OUTPUT] #5 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.0s done
+[2026-08-04T04:37:45.330Z] [OUTPUT] #5 DONE 0.1s
+[2026-08-04T04:37:45.330Z] [OUTPUT] #6 [stage-0  2/15] WORKDIR /app/
+[2026-08-04T04:37:45.330Z] [OUTPUT] #6 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #7 [stage-0  5/15] COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix
+[2026-08-04T04:37:45.330Z] [OUTPUT] #7 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #8 [stage-0  3/15] COPY .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix
+[2026-08-04T04:37:45.330Z] [OUTPUT] #9 [stage-0  4/15] RUN nix-env -if .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix && nix-collect-garbage -d
+[2026-08-04T04:37:45.330Z] [OUTPUT] #8 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #9 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #10 [stage-0  6/15] RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d
+[2026-08-04T04:37:45.330Z] [OUTPUT] #10 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #11 [stage-0  7/15] COPY .nixpacks/assets /assets/
+[2026-08-04T04:37:45.330Z] [OUTPUT] #11 CACHED
+[2026-08-04T04:37:45.330Z] [OUTPUT] #12 [stage-0  8/15] COPY . /app/.
+[2026-08-04T04:37:45.330Z] [OUTPUT] #12 DONE 0.1s
+[2026-08-04T04:37:45.483Z] [OUTPUT] #13 [stage-0  9/15] RUN  caddy fmt --overwrite /assets/Caddyfile
+[2026-08-04T04:37:45.788Z] [OUTPUT] #13 DONE 0.5s
+[2026-08-04T04:37:46.022Z] [OUTPUT] #14 [stage-0 10/15] COPY . /app/.
+[2026-08-04T04:37:46.022Z] [OUTPUT] #14 DONE 0.1s
+[2026-08-04T04:37:46.022Z] [OUTPUT] #15 [stage-0 11/15] RUN --mount=type=cache,id=UBDZOuyCyMs-/root/local/share/pnpm/store/v3,target=/root/.local/share/pnpm/store/v3 pnpm i --frozen-lockfile
+[2026-08-04T04:37:46.939Z] [OUTPUT] #15 1.068 Lockfile is up to date, resolution step is skipped
+[2026-08-04T04:37:47.110Z] [OUTPUT] #15 1.136 Progress: resolved 1, reused 0, downloaded 0, added 0
+[2026-08-04T04:37:47.110Z] [OUTPUT] #15 1.238 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[2026-08-04T04:37:47.110Z] [OUTPUT] #15 1.238 Packages: +421
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807    │                                                                   │
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807    ╭───────────────────────────────────────────────────────────────────╮
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807    │   Changelog: https://github.com/pnpm/pnpm/releases/tag/v11.20.0   │
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807    │                Update available! 9.15.9 → 11.20.0.                │
+[2026-08-04T04:37:47.679Z] [OUTPUT] #15 1.807    │                                                                   │
+[2026-08-04T04:37:47.679Z] [OUTPUT] #15 1.807    ╰───────────────────────────────────────────────────────────────────╯
+[2026-08-04T04:37:47.678Z] [OUTPUT] #15 1.807    │                 Run "pnpm add -g pnpm" to update.                 │
+[2026-08-04T04:37:47.679Z] [OUTPUT] #15 1.807
+[2026-08-04T04:37:48.015Z] [OUTPUT] #15 2.145 Progress: resolved 421, reused 0, downloaded 31, added 31
+[2026-08-04T04:37:49.016Z] [OUTPUT] #15 3.145 Progress: resolved 421, reused 0, downloaded 79, added 79
+[2026-08-04T04:37:50.647Z] [OUTPUT] #15 4.776 Progress: resolved 421, reused 0, downloaded 98, added 96
+[2026-08-04T04:37:52.070Z] [OUTPUT] #15 6.199 Progress: resolved 421, reused 0, downloaded 107, added 103
+[2026-08-04T04:37:53.074Z] [OUTPUT] #15 7.199 Progress: resolved 421, reused 0, downloaded 224, added 222
+[2026-08-04T04:37:54.073Z] [OUTPUT] #15 8.200 Progress: resolved 421, reused 0, downloaded 282, added 282
+[2026-08-04T04:37:55.073Z] [OUTPUT] #15 9.199 Progress: resolved 421, reused 0, downloaded 321, added 316
+[2026-08-04T04:37:56.078Z] [OUTPUT] #15 10.20 Progress: resolved 421, reused 0, downloaded 411, added 408
+[2026-08-04T04:37:57.089Z] [OUTPUT] #15 11.22 Progress: resolved 421, reused 0, downloaded 415, added 415
+[2026-08-04T04:37:58.089Z] [OUTPUT] #15 12.22 Progress: resolved 421, reused 0, downloaded 417, added 417
+[2026-08-04T04:37:59.091Z] [OUTPUT] #15 13.22 Progress: resolved 421, reused 0, downloaded 418, added 417
+[2026-08-04T04:38:00.300Z] [OUTPUT] #15 14.43 Progress: resolved 421, reused 0, downloaded 418, added 418
+[2026-08-04T04:38:01.299Z] [OUTPUT] #15 15.43 Progress: resolved 421, reused 0, downloaded 419, added 419
+[2026-08-04T04:38:02.300Z] [OUTPUT] #15 16.43 Progress: resolved 421, reused 0, downloaded 420, added 420
+[2026-08-04T04:38:04.494Z] [OUTPUT] #15 18.62 Progress: resolved 421, reused 0, downloaded 421, added 420
+[2026-08-04T04:38:04.734Z] [OUTPUT] #15 18.71 Progress: resolved 421, reused 0, downloaded 421, added 421, done
+[2026-08-04T04:38:05.711Z] [OUTPUT] #15 19.84 .../node_modules/@swc/core postinstall$ node postinstall.js
+[2026-08-04T04:38:05.933Z] [OUTPUT] #15 19.91 .../esbuild@0.25.12/node_modules/esbuild postinstall$ node install.js
+[2026-08-04T04:38:05.933Z] [OUTPUT] #15 19.91 .../esbuild@0.21.5/node_modules/esbuild postinstall$ node install.js
+[2026-08-04T04:38:05.960Z] [OUTPUT] #15 20.09 .../esbuild@0.25.12/node_modules/esbuild postinstall: Done
+[2026-08-04T04:38:06.062Z] [OUTPUT] #15 20.17 .../node_modules/@swc/core postinstall: Done
+[2026-08-04T04:38:06.062Z] [OUTPUT] #15 20.19 .../esbuild@0.21.5/node_modules/esbuild postinstall: Done
+[2026-08-04T04:38:06.881Z] [OUTPUT] #15 21.01
+[2026-08-04T04:38:06.881Z] [OUTPUT] #15 21.01 dependencies:
+[2026-08-04T04:38:06.882Z] [OUTPUT] #15 21.01 + @radix-ui/react-accordion 1.2.12
+[2026-08-04T04:38:06.881Z] [OUTPUT] #15 21.01 + @hookform/resolvers 3.10.0
+[2026-08-04T04:38:06.882Z] [OUTPUT] #15 21.01 + @radix-ui/react-alert-dialog 1.1.15
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-aspect-ratio 1.1.8
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-avatar 1.1.11
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-checkbox 1.3.3
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-collapsible 1.1.12
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-context-menu 2.2.16
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-dialog 1.1.15
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-hover-card 1.1.15
+[2026-08-04T04:38:06.883Z] [OUTPUT] #15 21.01 + @radix-ui/react-dropdown-menu 2.1.16
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-label 2.1.8
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-menubar 1.1.16
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-navigation-menu 1.2.14
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-popover 1.1.15
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-progress 1.1.8
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-radio-group 1.3.8
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-scroll-area 1.2.10
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-select 2.2.6
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-separator 1.1.8
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-slider 1.3.6
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-slot 1.2.4
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-switch 1.2.6
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-tabs 1.1.13
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-toast 1.2.15
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-toggle 1.1.10
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-toggle-group 1.1.11
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @radix-ui/react-tooltip 1.2.8
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @supabase/supabase-js 2.81.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + class-variance-authority 0.7.1
+[2026-08-04T04:38:06.884Z] [OUTPUT] #15 21.01 + @tanstack/react-query 5.90.8
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + clsx 2.1.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + cmdk 1.1.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + date-fns 3.6.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + embla-carousel-react 8.6.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + framer-motion 11.18.2
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + input-otp 1.4.2
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + lucide-react 0.462.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + next-themes 0.4.6
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react 19.2.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + prismjs 1.30.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-day-picker 9.11.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-dom 19.2.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-dropzone 14.3.8
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-error-boundary 4.1.2
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-hook-form 7.66.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-resizable-panels 2.1.9
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + react-router-dom 6.30.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + recharts 2.15.4
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + sonner 1.7.4
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + tailwind-merge 2.6.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + tailwindcss-animate 1.0.7
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + zod 3.25.76
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 devDependencies:
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + zustand 4.5.7
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @metagptx/vite-plugin-source-locator 0.0.6
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @tailwindcss/aspect-ratio 0.4.2
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @eslint/js 9.39.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @types/node 22.19.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @types/react 19.2.4
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @types/react-dom 19.2.3
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @tailwindcss/typography 0.5.19
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + @vitejs/plugin-react-swc 3.11.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + eslint 9.39.1
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + uuid 10.0.0
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + autoprefixer 10.4.22
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + eslint-plugin-react-refresh 0.4.24
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + eslint-plugin-react-hooks 5.2.0
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + postcss 8.5.6
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + tailwindcss 3.4.18
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + typescript 5.9.3
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + vaul 1.1.2
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + lovable-tagger 1.1.11
+[2026-08-04T04:38:06.885Z] [OUTPUT] #15 21.01 + globals 15.15.0
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + typescript-eslint 8.46.4
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01 + vite 5.4.21
+[2026-08-04T04:38:06.886Z] [OUTPUT] #15 21.01
+[2026-08-04T04:38:07.275Z] [OUTPUT] #15 21.40 Done in 20.9s using pnpm v9.15.9
+[2026-08-04T04:38:07.557Z] [OUTPUT] #15 DONE 21.7s
+[2026-08-04T04:38:07.710Z] [OUTPUT] #16 [stage-0 12/15] COPY . /app/.
+[2026-08-04T04:38:07.840Z] [OUTPUT] #16 DONE 0.3s
+[2026-08-04T04:38:07.995Z] [OUTPUT] #17 [stage-0 13/15] RUN --mount=type=cache,id=UBDZOuyCyMs-node_modules/cache,target=/app/node_modules/.cache pnpm run build
+[2026-08-04T04:38:08.773Z] [OUTPUT] #17 0.928
+[2026-08-04T04:38:08.774Z] [OUTPUT] #17 0.928 > vite build
+[2026-08-04T04:38:08.774Z] [OUTPUT] #17 0.928 > ghost-entertainment@0.0.0 build /app
+[2026-08-04T04:38:08.774Z] [OUTPUT] #17 0.928
+[2026-08-04T04:38:09.064Z] [OUTPUT] #17 1.220 [36mvite v5.4.21 [32mbuilding for production...[36m[39m
+[2026-08-04T04:38:09.290Z] [OUTPUT] #17 1.295 transforming...
+[2026-08-04T04:38:09.364Z] [OUTPUT] #17 1.520 [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-08-04T04:38:10.399Z] [OUTPUT] #17 2.555 [32m✓[39m 32 modules transformed.
+[2026-08-04T04:38:10.577Z] [OUTPUT] #17 2.733 rendering chunks...
+[2026-08-04T04:38:10.734Z] [OUTPUT] #17 2.812 computing gzip size...
+[2026-08-04T04:38:10.735Z] [OUTPUT] #17 2.826 [2mdist/[22m[32mindex.html                 [39m[1m[2m  3.59 kB[22m[1m[22m[2m │ gzip:  1.32 kB[22m
+[2026-08-04T04:38:10.735Z] [OUTPUT] #17 2.827 [2mdist/[22m[2massets/[22m[36mvendor-Dz_jqz6H.js  [39m[1m[2m 11.62 kB[22m[1m[22m[2m │ gzip:  4.10 kB[22m
+[2026-08-04T04:38:10.735Z] [OUTPUT] #17 2.827 [2mdist/[22m[2massets/[22m[36mindex-BhBlv7SW.js   [39m[1m[2m182.18 kB[22m[1m[22m[2m │ gzip: 57.51 kB[22m
+[2026-08-04T04:38:10.735Z] [OUTPUT] #17 2.827 [32m✓ built in 1.57s[39m
+[2026-08-04T04:38:10.735Z] [OUTPUT] #17 DONE 2.9s
+[2026-08-04T04:38:10.892Z] [OUTPUT] #18 [stage-0 14/15] RUN printf '\nPATH=/app/node_modules/.bin:$PATH' >> /root/.profile
+[2026-08-04T04:38:11.264Z] [OUTPUT] #18 DONE 0.5s
+[2026-08-04T04:38:11.366Z] [OUTPUT] #19 [stage-0 15/15] COPY . /app
+[2026-08-04T04:38:11.366Z] [OUTPUT] #20 exporting to image
+[2026-08-04T04:38:11.366Z] [OUTPUT] #19 DONE 0.1s
+[2026-08-04T04:38:11.366Z] [OUTPUT] #20 exporting layers
+[2026-08-04T04:38:27.078Z] [OUTPUT] #20 exporting layers 15.7s done
+[2026-08-04T04:38:27.234Z] [OUTPUT] #20 exporting manifest sha256:4d428002c1c7390d32884ca32d346e97a2301dd3556e59c69b17fe88b0cfec54 0.0s done
+[2026-08-04T04:38:27.234Z] [OUTPUT] #20 exporting attestation manifest sha256:1bb1adf436d89df2e7bef0f39d7e60b577cb3604362fce81467c1a4e9bbdf69e 0.1s done
+[2026-08-04T04:38:27.234Z] [OUTPUT] #20 exporting manifest list sha256:a7a787904746dc14de3297488ea3ff4a3d73c633143f1bc40cf98e0c28842f8f
+[2026-08-04T04:38:27.234Z] [OUTPUT] #20 exporting config sha256:adfccfa3d5c90ea3c821de975b358b0419e047c2c2bfb45dd9e52d4d45c6d15d 0.0s done
+[2026-08-04T04:38:27.417Z] [OUTPUT] #20 exporting manifest list sha256:a7a787904746dc14de3297488ea3ff4a3d73c633143f1bc40cf98e0c28842f8f 0.0s done
+[2026-08-04T04:38:27.418Z] [OUTPUT] #20 naming to docker.io/library/deployx-project-221774a5-cc39-4ffa-a92a-968103f0799a:latest done
+[2026-08-04T04:38:27.418Z] [OUTPUT] #20 unpacking to docker.io/library/deployx-project-221774a5-cc39-4ffa-a92a-968103f0799a:latest
+[2026-08-04T04:38:33.773Z] [OUTPUT] #20 unpacking to docker.io/library/deployx-project-221774a5-cc39-4ffa-a92a-968103f0799a:latest 6.5s done
+[2026-08-04T04:38:34.015Z] [OUTPUT] #20 DONE 22.5s
+[2026-08-04T04:38:34.310Z] [OUTPUT] [33m1 warning found (use docker --debug to expand):
+[2026-08-04T04:38:34.310Z] [OUTPUT] [0m - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 24)
+[2026-08-04T04:38:34.311Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/mz38b3127270z3zq769fnhe3b
+[2026-08-04T04:38:34.368Z] [SUCCESS] Image built successfully.
+[2026-08-04T04:38:34.402Z] [INFO] Attempting to start Docker container with dynamic port mapping...
+[2026-08-04T04:38:41.271Z] [OUTPUT] cbacbfd773e100b8d1741682ade1c0804cc307ca07b906d6d0fbcad9b500e22d
+[2026-08-04T04:38:43.855Z] [INFO] Container is running. Docker assigned dynamic host port 32784. Waiting for health check...
+[2026-08-04T04:38:44.109Z] [INFO] Provisioning public URL via Cloudflare...
+[2026-08-04T04:38:49.587Z] [SUCCESS] Public URL ready: https://wells-gzip-roulette-might.trycloudflare.com
+[2026-08-04T04:38:49.587Z] [SUCCESS] Container running successfully on port 32784.

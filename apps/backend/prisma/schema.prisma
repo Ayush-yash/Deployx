@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id               String            @id @default(uuid())
+  name             String
+  email            String            @unique
+  password         String
+  avatar           String?
+  role             String            @default("USER")
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  GitHubConnection GitHubConnection?
+  Project          Project[]
+  Notification     Notification[]
+  KubernetesCluster KubernetesCluster[]
+  RegistryCredential RegistryCredential[]
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  type      String   @default("INFO") // SUCCESS, ERROR, INFO, WARNING
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model GitHubConnection {
+  id          String   @id @default(uuid())
+  userId      String   @unique
+  githubId    String   @unique
+  username    String
+  displayName String?
+  avatarUrl   String?
+  email       String?
+  accessToken String
+  connectedAt DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model KubernetesCluster {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String
+  kubeconfig  String   // Encrypted
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Project     Project[]
+}
+
+model RegistryCredential {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String
+  registryUrl String   // e.g., docker.io, ghcr.io
+  username    String
+  password    String   // Encrypted token/password
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  User        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  Project     Project[]
+}
+
+model Project {
+  id                   String       @id @default(uuid())
+  name                 String
+  githubUrl            String
+  branch               String       @default("main")
+  framework            String
+  port                 Int?
+  environmentVariables Json?
+  description          String?
+  status               String       @default("Draft")
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+  ownerId              String
+  buildCommand         String?
+  hasDockerCompose     Boolean      @default(false)
+  hasDockerfile        Boolean      @default(false)
+  language             String?
+  outputDirectory      String?
+  packageManager       String?
+  runtime              String?
+  startCommand         String?
+  dockerfileContent    String?
+  hasKubernetesManifest Boolean    @default(false)
+  kubernetesManifestContent String?
+  autoDeploy           Boolean      @default(true)
+  webhookSecret        String?
+  publicUrl            String?
+  clusterId            String?
+  registryId           String?
+  Deployment           Deployment[]
+  User                 User                @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  KubernetesCluster    KubernetesCluster?  @relation(fields: [clusterId], references: [id], onDelete: SetNull)
+  RegistryCredential   RegistryCredential? @relation(fields: [registryId], references: [id], onDelete: SetNull)
+}
+
+model Deployment {
+  id                 String    @id @default(uuid())
+  projectId          String
+  status             String
+  version            Int       @default(1)
+  logFile            String?
+  containerName      String?
+  imageName          String?
+  containerId        String?
+  assignedPort       Int?
+  localUrl           String?
+  publicUrl          String?
+  framework          String?
+  branch             String
+  commitHash         String?
+  currentStep        String?
+  progressPercentage Int       @default(0)
+  duration           Int?
+  startedAt          DateTime  @default(now())
+  completedAt        DateTime?
+  errorMessage       String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  authorName         String?
+  commitMessage      String?
+  k8sNamespace       String?
+  k8sDeploymentName  String?
+  k8sServiceName     String?
+  Project            Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
