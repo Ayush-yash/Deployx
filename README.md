@@ -60,8 +60,7 @@ DeployX consists of two main components in a monorepo structure:
    ```
 
 5. **Start the Development Servers:**
-   - **Frontend:** `npm run dev` (inside `apps/frontend`)
-   - **Backend:** `npm run dev` (inside `apps/backend`)
+   - Run `npm run dev` in the root directory to start both the Frontend and Backend concurrently!
 
 ## 🛠️ Usage
 

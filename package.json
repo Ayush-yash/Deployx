@@ -7,7 +7,11 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "dev:frontend": "npm run dev --workspace=frontend",
     "dev:backend": "npm run dev --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4"
   }
 }
