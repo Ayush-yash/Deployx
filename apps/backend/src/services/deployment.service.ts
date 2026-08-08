@@ -477,14 +477,13 @@ document.addEventListener('DOMContentLoaded', () => {
          emitLog('INFO', 'Building Docker image...');
          let dockerBuildCmd = `docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`;
          
-         if (!useBuildKit) {
-            dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=0&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=0 ${dockerBuildCmd}`;
-         }
+         // Nixpacks requires BuildKit for --mount=type=cache
+         dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
 
          for (let attempt = 1; attempt <= 3; attempt++) {
             try {
                if (attempt > 1) {
-                  emitLog('WARNING', `Docker build retry ${attempt - 1}/3...`);
+                  emitLog('WARNING', `Docker build retry ${attempt}/3...`);
                   await new Promise(resolve => setTimeout(resolve, 2000));
                }
                await streamCommand(dockerBuildCmd);
@@ -493,13 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
                break;
             } catch (err) {
                buildError = err;
-               if (useBuildKit && attempt === 1) {
-                  emitLog('WARNING', 'BuildKit build failed. Retrying without BuildKit...');
-                  useBuildKit = false;
-                  dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=0&& docker build -t ${imageName} -f \"${workspace}/.nixpacks/Dockerfile\" \"${workspace}\""` : `DOCKER_BUILDKIT=0 docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`;
-               } else {
-                  emitLog('ERROR', `Docker build failed attempt ${attempt}. Reason: ${err instanceof Error ? err.message : String(err)}`);
-               }
+               emitLog('ERROR', `Build attempt ${attempt} failed.`);
             }
          }
       } catch (err) {
