@@ -46,6 +46,17 @@ app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok' });
 });
 
+// Root welcome route for API server
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({
+    name: 'DeployX Backend API',
+    status: 'running',
+    health: '/health',
+    metrics: '/metrics',
+    documentation: 'Welcome to DeployX Platform API'
+  });
+});
+
 // Basic error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);

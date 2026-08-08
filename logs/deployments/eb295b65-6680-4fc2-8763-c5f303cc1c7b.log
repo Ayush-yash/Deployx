@@ -1,0 +1,299 @@
+[2026-08-08T22:36:45.858Z] [SYSTEM] Starting deployment process...
+[2026-08-08T22:36:46.000Z] [INFO] Cloning branch main from repository...
+[2026-08-08T22:36:46.188Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\662e9488-db2e-4590-8cb9-716d1a5761d7_eb295b65-6680-4fc2-8763-c5f303cc1c7b'...
+[2026-08-08T22:36:48.189Z] [SUCCESS] Repository cloned successfully.
+[2026-08-08T22:36:48.219Z] [INFO] Detecting framework... Framework selected: Node.js
+[2026-08-08T22:36:48.222Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-08T22:36:48.238Z] [INFO] Building image using Nixpacks: deployx-project-662e9488-db2e-4590-8cb9-716d1a5761d7... This may take a few minutes.
+[2026-08-08T22:36:48.238Z] [INFO] Checking Docker availability...
+[2026-08-08T22:36:48.381Z] [OUTPUT] Docker version
+[2026-08-08T22:36:48.381Z] [OUTPUT] 29.6.2, build dfc4efb
+[2026-08-08T22:36:48.401Z] [SUCCESS] Docker OK
+[2026-08-08T22:36:48.402Z] [INFO] Checking Docker daemon...
+[2026-08-08T22:36:49.073Z] [OUTPUT] Client:
+[2026-08-08T22:36:49.073Z] [OUTPUT] Version:    29.6.2
+[2026-08-08T22:36:49.074Z] [OUTPUT] Context:    desktop-linux
+[2026-08-08T22:36:49.074Z] [OUTPUT] Debug Mode: false
+[2026-08-08T22:36:49.074Z] [OUTPUT] Plugins:
+[2026-08-08T22:36:49.074Z] [OUTPUT] agent: Docker AI Agent Runner (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  v1.111.0
+[2026-08-08T22:36:49.074Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+[2026-08-08T22:36:49.074Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  v1.27.0
+[2026-08-08T22:36:49.074Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  v0.35.0-desktop.2
+[2026-08-08T22:36:49.074Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-08T22:36:49.074Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-08T22:36:49.074Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  v5.3.1
+[2026-08-08T22:36:49.074Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-08T22:36:49.074Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  0.0.47
+[2026-08-08T22:36:49.074Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-08T22:36:49.074Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-08T22:36:49.074Z] [OUTPUT] Version:  v0.4.3
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.0.7
+[2026-08-08T22:36:49.075Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.2.31
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v1.4.0
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v1.2.6
+[2026-08-08T22:36:49.075Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.6.9
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.2.0
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-08T22:36:49.076Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-08T22:36:49.076Z] [OUTPUT] Version:  v1.24.0
+[2026-08-08T22:36:49.076Z] [OUTPUT] Path:     C:\Users\Ayush Yash\.docker\cli-plugins\docker-scout.exe
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.43.3
+[2026-08-08T22:36:49.076Z] [OUTPUT] Containers: 22
+[2026-08-08T22:36:49.076Z] [OUTPUT] Running: 21
+[2026-08-08T22:36:49.076Z] [OUTPUT] Paused: 0
+[2026-08-08T22:36:49.076Z] [OUTPUT] Stopped: 1
+[2026-08-08T22:36:49.075Z] [OUTPUT] sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+[2026-08-08T22:36:49.076Z] [OUTPUT] Server Version: 29.6.2
+[2026-08-08T22:36:49.076Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-08T22:36:49.076Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-08T22:36:49.076Z] [OUTPUT] Logging Driver: json-file
+[2026-08-08T22:36:49.076Z] [OUTPUT] Images: 42
+[2026-08-08T22:36:49.076Z] [OUTPUT] Cgroup Version: 1
+[2026-08-08T22:36:49.075Z] [OUTPUT] Version:  v0.13.0
+[2026-08-08T22:36:49.076Z] [OUTPUT] Volume: local
+[2026-08-08T22:36:49.077Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-08T22:36:49.076Z] [OUTPUT] Server:
+[2026-08-08T22:36:49.077Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-08T22:36:49.077Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-08T22:36:49.077Z] [OUTPUT] WARNING: Support for cgroup v1 is deprecated and planned to be removed by no later than May 2029 (https://github.com/moby/moby/issues/51111)
+[2026-08-08T22:36:49.078Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-08T22:36:49.076Z] [OUTPUT] Plugins:
+[2026-08-08T22:36:49.076Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-08T22:36:49.077Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-08T22:36:49.078Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-08T22:36:49.078Z] [OUTPUT] /var/run/cdi
+[2026-08-08T22:36:49.078Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-08T22:36:49.078Z] [OUTPUT] Swarm: inactive
+[2026-08-08T22:36:49.079Z] [OUTPUT] Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-08-08T22:36:49.078Z] [OUTPUT] /etc/cdi
+[2026-08-08T22:36:49.079Z] [OUTPUT] Init Binary: docker-init
+[2026-08-08T22:36:49.079Z] [OUTPUT] containerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+[2026-08-08T22:36:49.079Z] [OUTPUT] runc version: v1.3.6-0-g491b69ba
+[2026-08-08T22:36:49.079Z] [OUTPUT] init version: de40ad0
+[2026-08-08T22:36:49.079Z] [OUTPUT] Security Options:
+[2026-08-08T22:36:49.079Z] [OUTPUT] seccomp
+[2026-08-08T22:36:49.079Z] [OUTPUT] Default Runtime: runc
+[2026-08-08T22:36:49.079Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-08T22:36:49.079Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-08T22:36:49.079Z] [OUTPUT] OSType: linux
+[2026-08-08T22:36:49.079Z] [OUTPUT] Profile: builtin
+[2026-08-08T22:36:49.079Z] [OUTPUT] CPUs: 16
+[2026-08-08T22:36:49.079Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-08T22:36:49.079Z] [OUTPUT] Name: docker-desktop
+[2026-08-08T22:36:49.079Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-08T22:36:49.080Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-08T22:36:49.080Z] [OUTPUT] Debug Mode: false
+[2026-08-08T22:36:49.080Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-08T22:36:49.078Z] [OUTPUT] Discovered Devices:
+[2026-08-08T22:36:49.080Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-08T22:36:49.078Z] [OUTPUT] CDI spec directories:
+[2026-08-08T22:36:49.080Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-08T22:36:49.080Z] [OUTPUT] Experimental: false
+[2026-08-08T22:36:49.080Z] [OUTPUT] Labels:
+[2026-08-08T22:36:49.080Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-08T22:36:49.080Z] [OUTPUT] Insecure Registries:
+[2026-08-08T22:36:49.080Z] [OUTPUT] ::1/128
+[2026-08-08T22:36:49.080Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-08T22:36:49.079Z] [OUTPUT] Architecture: x86_64
+[2026-08-08T22:36:49.080Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-08T22:36:49.080Z] [OUTPUT] Firewall Backend: iptables
+[2026-08-08T22:36:49.080Z] [OUTPUT] 127.0.0.0/8
+[2026-08-08T22:36:49.103Z] [SUCCESS] Daemon Running
+[2026-08-08T22:36:49.233Z] [INFO] Checking Buildx...
+[2026-08-08T22:36:49.548Z] [OUTPUT] github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
+[2026-08-08T22:36:49.606Z] [SUCCESS] Buildx Installed
+[2026-08-08T22:36:50.220Z] [INFO] Docker Status Context:
+Docker Version: 29.6.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-08T22:36:50.250Z] [INFO] Generating Nixpacks build plan and Dockerfile...
+[2026-08-08T22:36:56.376Z] [OUTPUT] ╔════════ Nixpacks v1.41.0 ════════╗
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║ setup      │ nodejs_20, npm-10_x ║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║──────────────────────────────────║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║ install    │ npm ci              ║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║──────────────────────────────────║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║ build      │ npm run build       ║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║──────────────────────────────────║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ║ start      │ npm run start       ║
+[2026-08-08T22:36:56.376Z] [OUTPUT] ╚══════════════════════════════════╝
+[2026-08-08T22:36:56.387Z] [OUTPUT] Saved output to:
+[2026-08-08T22:36:56.387Z] [OUTPUT] C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\662e9488-db2e-4590-8cb9-716d1a5761d7_eb295b65-6680-4fc2-8763-c5f303cc1c7b
+[2026-08-08T22:36:56.407Z] [SUCCESS] Nixpacks plan generated.
+[2026-08-08T22:36:56.407Z] [INFO] Building Docker image...
+[2026-08-08T22:36:57.636Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-08-08T22:36:57.636Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-08-08T22:36:57.638Z] [OUTPUT] #1 transferring dockerfile: 979B 0.0s done
+[2026-08-08T22:36:57.639Z] [OUTPUT] #1 DONE 0.1s
+[2026-08-08T22:36:57.752Z] [OUTPUT] #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-08T22:36:57.753Z] [OUTPUT] #2 DONE 0.1s
+[2026-08-08T22:36:57.860Z] [OUTPUT] #3 [internal] load .dockerignore
+[2026-08-08T22:36:57.860Z] [OUTPUT] #3 transferring context: 118B 0.0s done
+[2026-08-08T22:36:57.860Z] [OUTPUT] #3 DONE 0.1s
+[2026-08-08T22:36:57.969Z] [OUTPUT] #4 [internal] load build context
+[2026-08-08T22:36:58.087Z] [OUTPUT] #4 ...
+[2026-08-08T22:36:58.087Z] [OUTPUT] #5 [stage-0  1/10] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+[2026-08-08T22:36:58.087Z] [OUTPUT] #5 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.1s done
+[2026-08-08T22:36:58.087Z] [OUTPUT] #5 DONE 0.1s
+[2026-08-08T22:36:58.087Z] [OUTPUT] #4 [internal] load build context
+[2026-08-08T22:36:59.172Z] [OUTPUT] #4 transferring context: 1.76MB 1.1s done
+[2026-08-08T22:36:59.172Z] [OUTPUT] #4 DONE 1.3s
+[2026-08-08T22:36:59.173Z] [OUTPUT] #6 [stage-0  3/10] COPY .nixpacks/nixpkgs-23f9169c4ccce521379e602cc82ed873a1f1b52b.nix .nixpacks/nixpkgs-23f9169c4ccce521379e602cc82ed873a1f1b52b.nix
+[2026-08-08T22:36:59.173Z] [OUTPUT] #6 CACHED
+[2026-08-08T22:36:59.173Z] [OUTPUT] #7 [stage-0  2/10] WORKDIR /app/
+[2026-08-08T22:36:59.173Z] [OUTPUT] #7 CACHED
+[2026-08-08T22:36:59.173Z] [OUTPUT] #8 [stage-0  4/10] RUN nix-env -if .nixpacks/nixpkgs-23f9169c4ccce521379e602cc82ed873a1f1b52b.nix && nix-collect-garbage -d
+[2026-08-08T22:36:59.330Z] [OUTPUT] #8 CACHED
+[2026-08-08T22:36:59.330Z] [OUTPUT] #9 [stage-0  5/10] COPY . /app/.
+[2026-08-08T22:36:59.423Z] [OUTPUT] #9 DONE 0.2s
+[2026-08-08T22:36:59.580Z] [OUTPUT] #10 [stage-0  6/10] RUN --mount=type=cache,id=46GuTEou3PY-/root/npm,target=/root/.npm npm ci
+[2026-08-08T22:37:04.344Z] [OUTPUT] #10 4.912 npm warn EBADENGINE Unsupported engine {
+[2026-08-08T22:37:04.344Z] [OUTPUT] #10 4.912 npm warn EBADENGINE   required: { bun: '>=1.2.0', node: '>=22.0.0' },
+[2026-08-08T22:37:04.344Z] [OUTPUT] #10 4.912 npm warn EBADENGINE   package: '@prisma/streams-local@0.1.11',
+[2026-08-08T22:37:04.344Z] [OUTPUT] #10 4.912 npm warn EBADENGINE   current: { node: 'v20.19.5', npm: '10.8.2' }
+[2026-08-08T22:37:04.344Z] [OUTPUT] #10 4.912 npm warn EBADENGINE }
+[2026-08-08T22:38:32.719Z] [OUTPUT] #10 93.29
+[2026-08-08T22:38:32.719Z] [OUTPUT] #10 93.29
+[2026-08-08T22:38:32.719Z] [OUTPUT] #10 93.29 90 packages are looking for funding
+[2026-08-08T22:38:32.719Z] [OUTPUT] #10 93.29 added 533 packages, and audited 537 packages in 2m
+[2026-08-08T22:38:32.719Z] [OUTPUT] #10 93.29   run `npm fund` for details
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31 5 high severity vulnerabilities
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31 To address issues that do not require attention, run:
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31   npm audit fix
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31 To address all issues (including breaking changes), run:
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31   npm audit fix --force
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31 Run `npm audit` for details.
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.32 npm notice
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.32 npm notice New major version of npm available! 10.8.2 -> 12.0.2
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.31
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.32 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.32 npm notice To update run: npm install -g npm@12.0.2
+[2026-08-08T22:38:32.898Z] [OUTPUT] #10 93.32 npm notice
+[2026-08-08T22:38:35.958Z] [OUTPUT] #10 DONE 96.5s
+[2026-08-08T22:38:36.113Z] [OUTPUT] #11 [stage-0  7/10] COPY . /app/.
+[2026-08-08T22:38:36.375Z] [OUTPUT] #11 DONE 0.4s
+[2026-08-08T22:38:36.531Z] [OUTPUT] #12 [stage-0  8/10] RUN --mount=type=cache,id=46GuTEou3PY-node_modules/cache,target=/app/node_modules/.cache npm run build
+[2026-08-08T22:38:37.687Z] [OUTPUT] #12 1.307
+[2026-08-08T22:38:37.687Z] [OUTPUT] #12 1.307 > deployx@1.0.0 build
+[2026-08-08T22:38:37.687Z] [OUTPUT] #12 1.307 > npm run build --workspace=@deployx/backend && npm run build --workspace=@deployx/frontend
+[2026-08-08T22:38:37.687Z] [OUTPUT] #12 1.307
+[2026-08-08T22:38:37.905Z] [OUTPUT] #12 1.524
+[2026-08-08T22:38:37.906Z] [OUTPUT] #12 1.524 > @deployx/backend@1.0.0 build
+[2026-08-08T22:38:37.906Z] [OUTPUT] #12 1.524 > tsc
+[2026-08-08T22:38:37.906Z] [OUTPUT] #12 1.524
+[2026-08-08T22:38:42.768Z] [OUTPUT] #12 6.387
+[2026-08-08T22:38:42.768Z] [OUTPUT] #12 6.387 > @deployx/frontend@0.0.0 build
+[2026-08-08T22:38:42.768Z] [OUTPUT] #12 6.387 > vite build
+[2026-08-08T22:38:42.768Z] [OUTPUT] #12 6.387
+[2026-08-08T22:38:43.205Z] [OUTPUT] #12 6.825 vite v8.1.5 building client environment for production...
+[2026-08-08T22:38:43.373Z] [OUTPUT] #12 6.843 [2Ktransforming...
+[2026-08-08T22:38:45.408Z] [OUTPUT] ✓ 3265 modules transformed.
+[2026-08-08T22:38:45.947Z] [OUTPUT] #12 9.568 rendering chunks...
+[2026-08-08T22:38:46.355Z] [OUTPUT] #12 9.973 computing gzip size...
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/index.html                                  0.55 kB │ gzip:   0.33 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/index-C2BS9PLo.css                  83.27 kB │ gzip:  12.10 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/search-Ch09MIWD.js                   0.17 kB │ gzip:   0.17 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/copy-D-2hE4tp.js                     0.23 kB │ gzip:   0.21 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/circle-check-zfjjqi15.js             0.17 kB │ gzip:   0.16 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/external-link-DjVLAEFH.js            0.25 kB │ gzip:   0.19 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/circle-alert-D8-Q9u_t.js             0.25 kB │ gzip:   0.18 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/play-LY9_wJCu.js                     0.19 kB │ gzip:   0.18 kB
+[2026-08-08T22:38:46.500Z] [OUTPUT] #12 9.993 dist/assets/pen-Bz2GAt0x.js                      0.23 kB │ gzip:   0.20 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/calendar-BiDg7cUg.js                 0.25 kB │ gzip:   0.20 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/box-CR4Hp2H2.js                      0.31 kB │ gzip:   0.22 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/trash-2-BTLx9KE_.js                  0.32 kB │ gzip:   0.21 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/git-commit-horizontal-BSL_eG23.js    0.36 kB │ gzip:   0.25 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/deploymentService-aQ4ysdXj.js        0.57 kB │ gzip:   0.22 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/shield-check-C_Xf3vNB.js             0.32 kB │ gzip:   0.25 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Logs-DRKoojKs.js                     0.71 kB │ gzip:   0.45 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/projectService-B_v8iDvd.js           0.75 kB │ gzip:   0.29 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/EditProject-BeoxV7wr.js              1.18 kB │ gzip:   0.64 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/refresh-cw-Ca3ue1jb.js               1.23 kB │ gzip:   0.53 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/githubService-BH-nfLys.js            0.58 kB │ gzip:   0.27 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/star-1qcMLZVE.js                     0.66 kB │ gzip:   0.37 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/tooltipContext-DaocRZkl.js           0.50 kB │ gzip:   0.27 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/CreateProject-rZB45r7-.js            2.01 kB │ gzip:   0.93 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Deployments-DzvrTnEX.js              3.12 kB │ gzip:   1.12 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Skeletons-CJVVol4M.js                1.98 kB │ gzip:   0.60 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/GitHubCallback-Cq84LGfb.js           1.52 kB │ gzip:   0.78 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Settings-CyJ_Jo-_.js                 5.01 kB │ gzip:   1.62 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/GitHubConnect-BZFVS0vn.js            5.71 kB │ gzip:   2.15 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Repositories-HSkFuUBQ.js             5.88 kB │ gzip:   2.00 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Projects-NdTvh4vv.js                 6.00 kB │ gzip:   2.13 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/RepositoryDetails-BE3eO4sO.js        6.02 kB │ gzip:   1.88 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/en-US-BBK4T6I4.js                    7.91 kB │ gzip:   2.81 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/DashboardHome-CytRQ8Ur.js           10.83 kB │ gzip:   3.70 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/DeploymentDetails-DK0uiElz.js       16.03 kB │ gzip:   4.55 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/ProjectDetails-BLUuBycC.js          17.56 kB │ gzip:   4.75 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/ProjectForm-B_yFCg9J.js             20.25 kB │ gzip:   5.20 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Analytics-CfaDW9-b.js               52.82 kB │ gzip:  15.31 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Monitoring-Cd5umjgk.js              57.82 kB │ gzip:  15.36 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/createLucideIcon-Dr3HUIFZ.js        69.55 kB │ gzip:  25.95 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/AreaChart-40XKN6RM.js              357.17 kB │ gzip: 103.94 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/index-wd-OZigD.js                  597.79 kB │ gzip: 183.05 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/EmptyState-C1jISEga.js               1.43 kB │ gzip:   0.64 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.994 [plugin builtin:vite-reporter]
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/Notifications-BbyD8dzC.js            3.73 kB │ gzip:   1.36 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993 dist/assets/ProjectCard-BLeEUC_k.js              3.44 kB │ gzip:   1.18 kB
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.994 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.994 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.997 ✓ built in 3.17s
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 10.05 npm notice
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 10.05 npm notice New major version of npm available! 10.8.2 -> 12.0.2
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 10.05 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 10.05 npm notice To update run: npm install -g npm@12.0.2
+[2026-08-08T22:38:46.502Z] [OUTPUT] #12 10.05 npm notice
+[2026-08-08T22:38:46.502Z] [OUTPUT] #12 DONE 10.1s
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.993
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.994 - Using dynamic import() to code-split the application
+[2026-08-08T22:38:46.501Z] [OUTPUT] #12 9.994 (!) Some chunks are larger than 500 kB after minification. Consider:
+[2026-08-08T22:38:46.657Z] [OUTPUT] #13 [stage-0  9/10] RUN printf '\nPATH=/app/node_modules/.bin:$PATH' >> /root/.profile
+[2026-08-08T22:38:47.139Z] [OUTPUT] #13 DONE 0.6s
+[2026-08-08T22:38:47.297Z] [OUTPUT] #14 [stage-0 10/10] COPY . /app
+[2026-08-08T22:38:47.348Z] [OUTPUT] #14 DONE 0.2s
+[2026-08-08T22:38:47.521Z] [OUTPUT] #15 exporting to image
+[2026-08-08T22:38:47.521Z] [OUTPUT] #15 exporting layers
+[2026-08-08T22:39:41.618Z] [OUTPUT] #15 exporting layers 54.2s done
+[2026-08-08T22:39:41.770Z] [OUTPUT] #15 exporting manifest sha256:5c03855d98eaf1ca550bff65e750668f1a4b38ea5c35cb22c787c8c5a6217647 0.0s done
+[2026-08-08T22:39:41.770Z] [OUTPUT] #15 exporting config sha256:ad8083e68e5ea2cf0cd8c906df1370e04166627172745b25951b3306827e26f6 0.0s done
+[2026-08-08T22:39:41.770Z] [OUTPUT] #15 exporting attestation manifest sha256:a9b0bcdb807a7dec62e1a07664609c46c0e927988e3a04d4f0454ad3d458de35
+[2026-08-08T22:39:41.890Z] [OUTPUT] #15 exporting attestation manifest sha256:a9b0bcdb807a7dec62e1a07664609c46c0e927988e3a04d4f0454ad3d458de35 0.1s done
+[2026-08-08T22:39:41.891Z] [OUTPUT] #15 exporting manifest list sha256:2cd94e7d6596aa77402cdceab556e1801a4243c184d2e6b5d31e191e9139d51c 0.0s done
+[2026-08-08T22:39:42.061Z] [OUTPUT] #15 naming to docker.io/library/deployx-project-662e9488-db2e-4590-8cb9-716d1a5761d7:latest 0.0s done
+[2026-08-08T22:39:42.062Z] [OUTPUT] #15 unpacking to docker.io/library/deployx-project-662e9488-db2e-4590-8cb9-716d1a5761d7:latest
+[2026-08-08T22:40:18.133Z] [OUTPUT] #15 unpacking to docker.io/library/deployx-project-662e9488-db2e-4590-8cb9-716d1a5761d7:latest 36.2s done
+[2026-08-08T22:40:18.277Z] [OUTPUT] #15 DONE 90.9s
+[2026-08-08T22:40:18.752Z] [OUTPUT] [33m1 warning found (use docker --debug to expand):
+[2026-08-08T22:40:18.752Z] [OUTPUT] [0m - UndefinedVar: Usage of undefined variable '$NIXPACKS_PATH' (line 18)
+[2026-08-08T22:40:18.752Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/xpmw4e0ko0vb8897q66yzknlo
+[2026-08-08T22:40:18.844Z] [SUCCESS] Image built successfully.
+[2026-08-08T22:40:18.951Z] [INFO] Attempting to start Docker container with dynamic port mapping...
+[2026-08-08T22:40:23.716Z] [OUTPUT] 38e6242ab7b80ce927b7998a7c7660ae799e27c7b5e1e65ffeb60cd26b28aeed
+[2026-08-08T22:40:26.766Z] [INFO] Container is running. Docker assigned dynamic host port 32784. Waiting for health check...
+[2026-08-08T22:40:28.566Z] [INFO] Provisioning public URL via Cloudflare...
+[2026-08-08T22:40:38.261Z] [SUCCESS] Public URL ready: https://wishing-builder-ooo-sic.trycloudflare.com
+[2026-08-08T22:40:38.262Z] [SUCCESS] Container running successfully on port 32784.
