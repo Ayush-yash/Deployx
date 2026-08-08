@@ -41,7 +41,10 @@ export const register = async (req: Request, res: Response) => {
       select: { id: true, name: true, email: true, role: true }
     });
 
-    res.status(201).json({ success: true, message: 'Registration successful', data: user });
+    // Auto-login after registration — return JWT token
+    const token = generateToken(user.id);
+
+    res.status(201).json({ success: true, message: 'Registration successful', token, user });
   } catch (error: any) {
     if (error instanceof z.ZodError) {
       return res.status(400).json({ success: false, message: error.issues?.[0]?.message || 'Validation error' });
