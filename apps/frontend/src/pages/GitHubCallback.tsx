@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { useMutation } from '@tanstack/react-query';
 import { githubService } from '../services/githubService';
 import { Loader2 } from 'lucide-react';
 import { GlassCard } from '../components/GlassCard';
@@ -10,38 +9,50 @@ const GitHubCallback: React.FC = () => {
   const navigate = useNavigate();
   const code = searchParams.get('code');
 
-  const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: (code: string) => githubService.connectCallback(code),
-    onSuccess: () => {
-      navigate('/dashboard/github');
-    },
-  });
-
-  const hasMutated = React.useRef(false);
+  const [isPending, setIsPending] = React.useState(true);
+  const [error, setError] = React.useState<Error | null>(null);
 
   useEffect(() => {
-    if (code && !hasMutated.current) {
-      hasMutated.current = true;
-      mutate(code);
-    } else if (!code) {
+    let isMounted = true;
+    
+    if (!code) {
       navigate('/dashboard/github');
+      return;
     }
-  }, [code, mutate, navigate]);
+
+    const connect = async () => {
+      try {
+        await githubService.connectCallback(code);
+        if (isMounted) navigate('/dashboard/github');
+      } catch (err: any) {
+        if (isMounted) {
+          setError(err.response?.data?.message ? new Error(err.response.data.message) : err);
+          setIsPending(false);
+        }
+      }
+    };
+
+    connect();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [code, navigate]);
 
   return (
     <div className="flex items-center justify-center min-h-[50vh]">
       <GlassCard className="p-8 max-w-md w-full text-center space-y-6">
         <h2 className="text-xl font-bold text-white">Connecting to GitHub...</h2>
-        {isPending && (
+        {isPending && !error && (
           <div className="flex flex-col items-center gap-4 text-blue-400">
             <Loader2 className="w-10 h-10 animate-spin" />
             <p className="text-sm">Exchanging secure token with GitHub.</p>
           </div>
         )}
-        {isError && (
+        {error && (
           <div className="text-red-400 space-y-4">
             <p className="font-semibold">Connection failed</p>
-            <p className="text-sm opacity-80">{error?.message || 'An unknown error occurred'}</p>
+            <p className="text-sm opacity-80">{error.message || 'An unknown error occurred'}</p>
             <button 
               onClick={() => navigate('/dashboard/github')}
               className="px-4 py-2 bg-slate-800 text-white rounded-lg border border-slate-700 hover:bg-slate-700 transition-colors"
