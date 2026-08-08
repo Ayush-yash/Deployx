@@ -17,10 +17,13 @@ const GitHubCallback: React.FC = () => {
     },
   });
 
+  const hasMutated = React.useRef(false);
+
   useEffect(() => {
-    if (code) {
+    if (code && !hasMutated.current) {
+      hasMutated.current = true;
       mutate(code);
-    } else {
+    } else if (!code) {
       navigate('/dashboard/github');
     }
   }, [code, mutate, navigate]);
