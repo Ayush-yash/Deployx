@@ -1,0 +1,161 @@
+[2026-08-06T19:24:54.834Z] [SYSTEM] Starting deployment process...
+[2026-08-06T19:24:54.901Z] [INFO] Cloning branch main from repository...
+[2026-08-06T19:24:55.069Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\d06ee1b4-28e1-4722-ad15-67e619a7d1b5_9a8a4f10-66e7-4985-a307-bd5a7e3873a4'...
+[2026-08-06T19:24:56.663Z] [SUCCESS] Repository cloned successfully.
+[2026-08-06T19:24:56.682Z] [INFO] Detecting framework... Framework selected: Node.js
+[2026-08-06T19:24:56.683Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-06T19:24:56.689Z] [INFO] Building image using Nixpacks: deployx-project-d06ee1b4-28e1-4722-ad15-67e619a7d1b5... This may take a few minutes.
+[2026-08-06T19:24:56.689Z] [INFO] Checking Docker availability...
+[2026-08-06T19:24:56.757Z] [OUTPUT] Docker version
+[2026-08-06T19:24:56.758Z] [OUTPUT] 29.6.2, build dfc4efb
+[2026-08-06T19:24:56.766Z] [SUCCESS] Docker OK
+[2026-08-06T19:24:56.766Z] [INFO] Checking Docker daemon...
+[2026-08-06T19:24:57.400Z] [OUTPUT] Client:
+[2026-08-06T19:24:57.401Z] [OUTPUT] Version:    29.6.2
+[2026-08-06T19:24:57.401Z] [OUTPUT] Context:    desktop-linux
+[2026-08-06T19:24:57.401Z] [OUTPUT] Debug Mode: false
+[2026-08-06T19:24:57.401Z] [OUTPUT] Plugins:
+[2026-08-06T19:24:57.401Z] [OUTPUT] agent: Docker AI Agent Runner (Docker Inc.)
+[2026-08-06T19:24:57.401Z] [OUTPUT] Version:  v1.111.0
+[2026-08-06T19:24:57.401Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+[2026-08-06T19:24:57.401Z] [OUTPUT] Version:  v1.27.0
+[2026-08-06T19:24:57.401Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-06T19:24:57.401Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-06T19:24:57.402Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-06T19:24:57.402Z] [OUTPUT] Version:  v0.35.0-desktop.2
+[2026-08-06T19:24:57.402Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-06T19:24:57.402Z] [OUTPUT] Version:  v5.3.1
+[2026-08-06T19:24:57.402Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-06T19:24:57.402Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-06T19:24:57.402Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-06T19:24:57.402Z] [OUTPUT] Version:  0.0.47
+[2026-08-06T19:24:57.402Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-06T19:24:57.402Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-06T19:24:57.402Z] [OUTPUT] Version:  v0.4.3
+[2026-08-06T19:24:57.403Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-06T19:24:57.403Z] [OUTPUT] dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+[2026-08-06T19:24:57.403Z] [OUTPUT] Version:  v0.0.7
+[2026-08-06T19:24:57.403Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+[2026-08-06T19:24:57.403Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-06T19:24:57.403Z] [OUTPUT] Version:  v0.2.31
+[2026-08-06T19:24:57.403Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-06T19:24:57.403Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-06T19:24:57.403Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-06T19:24:57.403Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-06T19:24:57.403Z] [OUTPUT] Version:  v1.4.0
+[2026-08-06T19:24:57.403Z] [OUTPUT] Version:  v0.43.3
+[2026-08-06T19:24:57.403Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-06T19:24:57.403Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-06T19:24:57.404Z] [OUTPUT] Version:  v1.2.6
+[2026-08-06T19:24:57.404Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-06T19:24:57.404Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-06T19:24:57.404Z] [OUTPUT] Version:  v0.6.9
+[2026-08-06T19:24:57.404Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-06T19:24:57.404Z] [OUTPUT] Version:  v0.2.0
+[2026-08-06T19:24:57.404Z] [OUTPUT] pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+[2026-08-06T19:24:57.404Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+[2026-08-06T19:24:57.404Z] [OUTPUT] sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+[2026-08-06T19:24:57.404Z] [OUTPUT] Version:  v0.13.0
+[2026-08-06T19:24:57.404Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-06T19:24:57.404Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-06T19:24:57.404Z] [OUTPUT] Version:  v1.24.0
+[2026-08-06T19:24:57.405Z] [OUTPUT] Path:     C:\Users\Ayush Yash\.docker\cli-plugins\docker-scout.exe
+[2026-08-06T19:24:57.405Z] [OUTPUT] Server:
+[2026-08-06T19:24:57.405Z] [OUTPUT] Running: 20
+[2026-08-06T19:24:57.405Z] [OUTPUT] Containers: 20
+[2026-08-06T19:24:57.405Z] [OUTPUT] Paused: 0
+[2026-08-06T19:24:57.405Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-06T19:24:57.405Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-06T19:24:57.406Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-06T19:24:57.406Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-06T19:24:57.406Z] [OUTPUT] WARNING: Support for cgroup v1 is deprecated and planned to be removed by no later than May 2029 (https://github.com/moby/moby/issues/51111)
+[2026-08-06T19:24:57.407Z] [OUTPUT] Stopped: 0
+[2026-08-06T19:24:57.407Z] [OUTPUT] Server Version: 29.6.2
+[2026-08-06T19:24:57.407Z] [OUTPUT] Images: 24
+[2026-08-06T19:24:57.407Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-06T19:24:57.408Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-06T19:24:57.408Z] [OUTPUT] Logging Driver: json-file
+[2026-08-06T19:24:57.408Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-06T19:24:57.408Z] [OUTPUT] Cgroup Version: 1
+[2026-08-06T19:24:57.408Z] [OUTPUT] Plugins:
+[2026-08-06T19:24:57.408Z] [OUTPUT] Volume: local
+[2026-08-06T19:24:57.408Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-06T19:24:57.408Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-06T19:24:57.408Z] [OUTPUT] CDI spec directories:
+[2026-08-06T19:24:57.409Z] [OUTPUT] /etc/cdi
+[2026-08-06T19:24:57.409Z] [OUTPUT] /var/run/cdi
+[2026-08-06T19:24:57.409Z] [OUTPUT] Discovered Devices:
+[2026-08-06T19:24:57.409Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-06T19:24:57.409Z] [OUTPUT] Swarm: inactive
+[2026-08-06T19:24:57.409Z] [OUTPUT] Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-08-06T19:24:57.409Z] [OUTPUT] Default Runtime: runc
+[2026-08-06T19:24:57.409Z] [OUTPUT] Init Binary: docker-init
+[2026-08-06T19:24:57.409Z] [OUTPUT] containerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+[2026-08-06T19:24:57.409Z] [OUTPUT] runc version: v1.3.6-0-g491b69ba
+[2026-08-06T19:24:57.409Z] [OUTPUT] init version: de40ad0
+[2026-08-06T19:24:57.409Z] [OUTPUT] Security Options:
+[2026-08-06T19:24:57.409Z] [OUTPUT] seccomp
+[2026-08-06T19:24:57.410Z] [OUTPUT] Profile: builtin
+[2026-08-06T19:24:57.410Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-06T19:24:57.410Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-06T19:24:57.410Z] [OUTPUT] OSType: linux
+[2026-08-06T19:24:57.410Z] [OUTPUT] Architecture: x86_64
+[2026-08-06T19:24:57.410Z] [OUTPUT] CPUs: 16
+[2026-08-06T19:24:57.410Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-06T19:24:57.410Z] [OUTPUT] Name: docker-desktop
+[2026-08-06T19:24:57.410Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-06T19:24:57.410Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-06T19:24:57.410Z] [OUTPUT] Debug Mode: false
+[2026-08-06T19:24:57.410Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-06T19:24:57.410Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-06T19:24:57.410Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-06T19:24:57.410Z] [OUTPUT] Labels:
+[2026-08-06T19:24:57.410Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-06T19:24:57.411Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-06T19:24:57.411Z] [OUTPUT] Insecure Registries:
+[2026-08-06T19:24:57.411Z] [OUTPUT] ::1/128
+[2026-08-06T19:24:57.411Z] [OUTPUT] Experimental: false
+[2026-08-06T19:24:57.411Z] [OUTPUT] 127.0.0.0/8
+[2026-08-06T19:24:57.411Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-06T19:24:57.411Z] [OUTPUT] Firewall Backend: iptables
+[2026-08-06T19:24:57.415Z] [SUCCESS] Daemon Running
+[2026-08-06T19:24:57.480Z] [INFO] Checking Buildx...
+[2026-08-06T19:24:57.686Z] [OUTPUT] github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
+[2026-08-06T19:24:57.747Z] [SUCCESS] Buildx Installed
+[2026-08-06T19:24:58.149Z] [INFO] Docker Status Context:
+Docker Version: 29.6.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-06T19:24:58.152Z] [INFO] Generating Nixpacks build plan and Dockerfile...
+[2026-08-06T19:25:04.373Z] [OUTPUT] ╔════════════ Nixpacks v1.41.0 ════════════╗
+[2026-08-06T19:25:04.373Z] [OUTPUT] ║ setup      │ nodejs_18, npm-9_x, openssl ║
+[2026-08-06T19:25:04.373Z] [OUTPUT] ║──────────────────────────────────────────║
+[2026-08-06T19:25:04.373Z] [OUTPUT] ║ install    │ npm ci                      ║
+[2026-08-06T19:25:04.373Z] [OUTPUT] ║──────────────────────────────────────────║
+[2026-08-06T19:25:04.373Z] [OUTPUT] ║ start      │                             ║
+[2026-08-06T19:25:04.373Z] [OUTPUT] ╚══════════════════════════════════════════╝
+[2026-08-06T19:25:04.373Z] [OUTPUT] Error: No start command could be found
+[2026-08-06T19:25:04.380Z] [ERROR] Failed to generate Nixpacks plan: Command failed with code 1. Output: 
+╔════════════ Nixpacks v1.41.0 ════════════╗
+║ setup      │ nodejs_18, npm-9_x, openssl ║
+║──────────────────────────────────────────║
+║ install    │ npm ci                      ║
+║──────────────────────────────────────────║
+║ start      │                             ║
+╚══════════════════════════════════════════╝
+
+Error: No start command could be found
+
+[2026-08-06T19:25:04.392Z] [ERROR] Deployment failed: Command failed with code 1. Output: 
+╔════════════ Nixpacks v1.41.0 ════════════╗
+║ setup      │ nodejs_18, npm-9_x, openssl ║
+║──────────────────────────────────────────║
+║ install    │ npm ci                      ║
+║──────────────────────────────────────────║
+║ start      │                             ║
+╚══════════════════════════════════════════╝
+
+Error: No start command could be found
+

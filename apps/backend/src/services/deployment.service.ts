@@ -469,35 +469,109 @@ document.addEventListener('DOMContentLoaded', () => {
       let buildError = null;
       
       try {
-         const envOverrides = isSpa ? { NIXPACKS_SPA_OUTPUT_DIR: spaOutputDir } : {};
-         await streamCommand(generateCmd, envOverrides);
-         emitLog('SUCCESS', 'Nixpacks plan generated.');
-         
-         // Now run docker build natively on host
-         emitLog('INFO', 'Building Docker image...');
-         let dockerBuildCmd = `docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`;
-         
-         // Nixpacks requires BuildKit for --mount=type=cache
-         dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+         // For SPA projects (React/Vite/Vue/Angular), generate a custom nginx Dockerfile
+         // This fixes white screen issues caused by React Router not working with Node.js server
+         if (isSpa) {
+            emitLog('INFO', `Detected SPA project. Generating nginx-based Dockerfile for proper routing...`);
+            
+            // Build env args for Dockerfile
+            const buildArgs = Object.entries(decryptedEnvs)
+              .map(([k, v]) => `ARG ${k}\nENV ${k}=$${k}`)
+              .join('\n');
+            const buildArgFlags = Object.entries(decryptedEnvs)
+              .map(([k, v]) => `--build-arg ${k}="${v.replace(/"/g, '\\"')}"`)
+              .join(' ');
 
-         for (let attempt = 1; attempt <= 3; attempt++) {
-            try {
-               if (attempt > 1) {
-                  emitLog('WARNING', `Docker build retry ${attempt}/3...`);
-                  await new Promise(resolve => setTimeout(resolve, 2000));
+            const nginxConf = `server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Gzip
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    # React Router support - serve index.html for all routes
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets
+    location ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}`;
+
+            const spaDockerfile = `FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+${buildArgs}
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=builder /app/${spaOutputDir} /usr/share/nginx/html
+COPY --from=builder /app/.nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]`;
+
+            await fs.writeFile(path.join(workspace, '.nginx.conf'), nginxConf);
+            await fs.writeFile(path.join(workspace, 'Dockerfile'), spaDockerfile);
+            emitLog('SUCCESS', 'Custom nginx Dockerfile generated for SPA.');
+
+            let dockerBuildCmd = `docker build -t ${imageName} ${buildArgFlags} "${workspace}"`;
+            dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+
+            for (let attempt = 1; attempt <= 3; attempt++) {
+               try {
+                  if (attempt > 1) {
+                     emitLog('WARNING', `Docker build retry ${attempt}/3...`);
+                     await new Promise(resolve => setTimeout(resolve, 2000));
+                  }
+                  await streamCommand(dockerBuildCmd);
+                  emitLog('SUCCESS', 'SPA Docker image built successfully.');
+                  buildSuccess = true;
+                  break;
+               } catch (err) {
+                  buildError = err;
+                  emitLog('ERROR', `Build attempt ${attempt} failed.`);
                }
-               await streamCommand(dockerBuildCmd);
-               emitLog('SUCCESS', 'Image built successfully.');
-               buildSuccess = true;
-               break;
-            } catch (err) {
-               buildError = err;
-               emitLog('ERROR', `Build attempt ${attempt} failed.`);
+            }
+         } else {
+            // Non-SPA: use Nixpacks (Node.js backend / fullstack)
+            const envOverrides: Record<string, string> = {};
+            await streamCommand(generateCmd, envOverrides);
+            emitLog('SUCCESS', 'Nixpacks plan generated.');
+            
+            // Now run docker build natively on host
+            emitLog('INFO', 'Building Docker image...');
+            let dockerBuildCmd = `docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`;
+            
+            // Nixpacks requires BuildKit for --mount=type=cache
+            dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+
+            for (let attempt = 1; attempt <= 3; attempt++) {
+               try {
+                  if (attempt > 1) {
+                     emitLog('WARNING', `Docker build retry ${attempt}/3...`);
+                     await new Promise(resolve => setTimeout(resolve, 2000));
+                  }
+                  await streamCommand(dockerBuildCmd);
+                  emitLog('SUCCESS', 'Image built successfully.');
+                  buildSuccess = true;
+                  break;
+               } catch (err) {
+                  buildError = err;
+                  emitLog('ERROR', `Build attempt ${attempt} failed.`);
+               }
             }
          }
       } catch (err) {
          buildError = err;
-         emitLog('ERROR', `Failed to generate Nixpacks plan: ${err instanceof Error ? err.message : String(err)}`);
+         emitLog('ERROR', `Failed to build Docker image: ${err instanceof Error ? err.message : String(err)}`);
       }
       
       clearInterval(buildInterval);
@@ -505,8 +579,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!buildSuccess) {
          throw buildError;
       }
-      
+
       await updateProgress('Image Built', 85, true);
+
 
       // Stop old container if exists for this project
       const previousDeployments = await prisma.deployment.findMany({
@@ -532,9 +607,10 @@ document.addEventListener('DOMContentLoaded', () => {
       
       let finalAssignedPort = 0;
       let finalContainerId = '';
-      const internalPort = project.port || 5000;
+      // SPA projects use nginx on port 80; non-SPA use project.port
+      const internalPort = isSpa ? 80 : (project.port || 5000);
       
-      
+
       if ((project as any).clusterId && (project as any).KubernetesCluster) {
         emitLog('INFO', `Deploying to Kubernetes cluster: ${(project as any).KubernetesCluster.name}`);
         const k8sService = new KubernetesService((project as any).KubernetesCluster.kubeconfig);

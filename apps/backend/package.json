@@ -4,6 +4,7 @@
   "description": "Backend for DeployX",
   "main": "src/server.ts",
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "tsx src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"

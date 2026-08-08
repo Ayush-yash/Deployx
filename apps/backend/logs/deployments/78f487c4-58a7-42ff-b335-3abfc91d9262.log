@@ -1,0 +1,194 @@
+[2026-08-08T11:34:01.127Z] [SYSTEM] Starting deployment process...
+[2026-08-08T11:34:01.195Z] [INFO] Cloning branch main from repository...
+[2026-08-08T11:34:01.296Z] [OUTPUT] Cloning into 'C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\775cfc9d-516b-47e4-8358-a7a7a85e36d7_78f487c4-58a7-42ff-b335-3abfc91d9262'...
+[2026-08-08T11:34:02.553Z] [SUCCESS] Repository cloned successfully.
+[2026-08-08T11:34:02.573Z] [INFO] Detecting framework... Framework selected: Unknown
+[2026-08-08T11:34:02.575Z] [INFO] Validating Vite project structure...
+[2026-08-08T11:34:02.577Z] [INFO] Writing custom project Dockerfile configuration from DeployX UI...
+[2026-08-08T11:34:02.582Z] [SUCCESS] Custom Dockerfile configured.
+[2026-08-08T11:34:02.582Z] [INFO] Configuring .dockerignore to ensure all required source files are copied...
+[2026-08-08T11:34:02.591Z] [INFO] Building image using Nixpacks: deployx-project-775cfc9d-516b-47e4-8358-a7a7a85e36d7... This may take a few minutes.
+[2026-08-08T11:34:02.591Z] [INFO] Checking Docker availability...
+[2026-08-08T11:34:02.684Z] [OUTPUT] Docker version
+[2026-08-08T11:34:02.684Z] [OUTPUT] 29.6.2, build dfc4efb
+[2026-08-08T11:34:02.694Z] [SUCCESS] Docker OK
+[2026-08-08T11:34:02.694Z] [INFO] Checking Docker daemon...
+[2026-08-08T11:34:03.191Z] [OUTPUT] Client:
+[2026-08-08T11:34:03.191Z] [OUTPUT] Version:    29.6.2
+[2026-08-08T11:34:03.191Z] [OUTPUT] Context:    desktop-linux
+[2026-08-08T11:34:03.192Z] [OUTPUT] Debug Mode: false
+[2026-08-08T11:34:03.192Z] [OUTPUT] Plugins:
+[2026-08-08T11:34:03.192Z] [OUTPUT] agent: Docker AI Agent Runner (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  v1.111.0
+[2026-08-08T11:34:03.192Z] [OUTPUT] ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  v1.27.0
+[2026-08-08T11:34:03.192Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  v0.35.0-desktop.2
+[2026-08-08T11:34:03.192Z] [OUTPUT] buildx: Docker Buildx (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+[2026-08-08T11:34:03.192Z] [OUTPUT] compose: Docker Compose (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  v5.3.1
+[2026-08-08T11:34:03.192Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+[2026-08-08T11:34:03.192Z] [OUTPUT] debug: Get a shell into any image or container (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  0.0.47
+[2026-08-08T11:34:03.192Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+[2026-08-08T11:34:03.192Z] [OUTPUT] desktop: Docker Desktop commands (Docker Inc.)
+[2026-08-08T11:34:03.192Z] [OUTPUT] Version:  v0.4.3
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v0.0.7
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] extension: Manages Docker extensions (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v0.2.31
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] init: Creates Docker-related starter files for your project (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v1.4.0
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] mcp: Docker MCP Plugin (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v0.43.3
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] model: Docker Model Runner (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v1.2.6
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-model.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v0.6.9
+[2026-08-08T11:34:03.193Z] [OUTPUT] offload: Docker Offload (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+[2026-08-08T11:34:03.193Z] [OUTPUT] Version:  v0.2.0
+[2026-08-08T11:34:03.193Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+[2026-08-08T11:34:03.194Z] [OUTPUT] sandbox: "docker sandbox" is deprecated, use Docker Sandboxes instead (Docker Inc.)
+[2026-08-08T11:34:03.194Z] [OUTPUT] Version:  v0.13.0
+[2026-08-08T11:34:03.194Z] [OUTPUT] Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+[2026-08-08T11:34:03.194Z] [OUTPUT] scout: Docker Scout (Docker Inc.)
+[2026-08-08T11:34:03.194Z] [OUTPUT] Version:  v1.24.0
+[2026-08-08T11:34:03.194Z] [OUTPUT] Path:     C:\Users\Ayush Yash\.docker\cli-plugins\docker-scout.exe
+[2026-08-08T11:34:03.194Z] [OUTPUT] Server:
+[2026-08-08T11:34:03.194Z] [OUTPUT] Containers: 20
+[2026-08-08T11:34:03.194Z] [OUTPUT] Running: 20
+[2026-08-08T11:34:03.194Z] [OUTPUT] Paused: 0
+[2026-08-08T11:34:03.194Z] [OUTPUT] Stopped: 0
+[2026-08-08T11:34:03.194Z] [OUTPUT] Images: 33
+[2026-08-08T11:34:03.194Z] [OUTPUT] Server Version: 29.6.2
+[2026-08-08T11:34:03.194Z] [OUTPUT] Storage Driver: overlayfs
+[2026-08-08T11:34:03.194Z] [OUTPUT] driver-type: io.containerd.snapshotter.v1
+[2026-08-08T11:34:03.194Z] [OUTPUT] Logging Driver: json-file
+[2026-08-08T11:34:03.194Z] [OUTPUT] Cgroup Driver: cgroupfs
+[2026-08-08T11:34:03.194Z] [OUTPUT] Cgroup Version: 1
+[2026-08-08T11:34:03.195Z] [OUTPUT] Plugins:
+[2026-08-08T11:34:03.195Z] [OUTPUT] Volume: local
+[2026-08-08T11:34:03.195Z] [OUTPUT] Network: bridge host ipvlan macvlan null overlay
+[2026-08-08T11:34:03.195Z] [OUTPUT] Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+[2026-08-08T11:34:03.195Z] [OUTPUT] CDI spec directories:
+[2026-08-08T11:34:03.195Z] [OUTPUT] /etc/cdi
+[2026-08-08T11:34:03.195Z] [OUTPUT] /var/run/cdi
+[2026-08-08T11:34:03.195Z] [OUTPUT] Discovered Devices:
+[2026-08-08T11:34:03.195Z] [OUTPUT] cdi: docker.com/gpu=webgpu
+[2026-08-08T11:34:03.195Z] [OUTPUT] Swarm: inactive
+[2026-08-08T11:34:03.195Z] [OUTPUT] Runtimes: io.containerd.runc.v2 nvidia runc
+[2026-08-08T11:34:03.195Z] [OUTPUT] Default Runtime: runc
+[2026-08-08T11:34:03.195Z] [OUTPUT] Init Binary: docker-init
+[2026-08-08T11:34:03.196Z] [OUTPUT] containerd version: e53c7c1516c3b2bff98eb76f1f4117477e6f4e66
+[2026-08-08T11:34:03.196Z] [OUTPUT] runc version: v1.3.6-0-g491b69ba
+[2026-08-08T11:34:03.196Z] [OUTPUT] init version: de40ad0
+[2026-08-08T11:34:03.196Z] [OUTPUT] Security Options:
+[2026-08-08T11:34:03.196Z] [OUTPUT] WARNING: No blkio throttle.read_bps_device support
+[2026-08-08T11:34:03.196Z] [OUTPUT] WARNING: No blkio throttle.write_bps_device support
+[2026-08-08T11:34:03.196Z] [OUTPUT] WARNING: No blkio throttle.read_iops_device support
+[2026-08-08T11:34:03.197Z] [OUTPUT] WARNING: No blkio throttle.write_iops_device support
+[2026-08-08T11:34:03.197Z] [OUTPUT] WARNING: Support for cgroup v1 is deprecated and planned to be removed by no later than May 2029 (https://github.com/moby/moby/issues/51111)
+[2026-08-08T11:34:03.199Z] [OUTPUT] seccomp
+[2026-08-08T11:34:03.199Z] [OUTPUT] Profile: builtin
+[2026-08-08T11:34:03.199Z] [OUTPUT] Kernel Version: 5.15.167.4-microsoft-standard-WSL2
+[2026-08-08T11:34:03.199Z] [OUTPUT] Operating System: Docker Desktop
+[2026-08-08T11:34:03.199Z] [OUTPUT] OSType: linux
+[2026-08-08T11:34:03.199Z] [OUTPUT] Architecture: x86_64
+[2026-08-08T11:34:03.199Z] [OUTPUT] CPUs: 16
+[2026-08-08T11:34:03.199Z] [OUTPUT] Total Memory: 7.61GiB
+[2026-08-08T11:34:03.199Z] [OUTPUT] Name: docker-desktop
+[2026-08-08T11:34:03.199Z] [OUTPUT] ID: 2c11e04d-bf42-4b81-8754-48515a2b081c
+[2026-08-08T11:34:03.199Z] [OUTPUT] Docker Root Dir: /var/lib/docker
+[2026-08-08T11:34:03.199Z] [OUTPUT] Debug Mode: false
+[2026-08-08T11:34:03.199Z] [OUTPUT] HTTP Proxy: http.docker.internal:3128
+[2026-08-08T11:34:03.199Z] [OUTPUT] HTTPS Proxy: http.docker.internal:3128
+[2026-08-08T11:34:03.199Z] [OUTPUT] com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+[2026-08-08T11:34:03.199Z] [OUTPUT] Labels:
+[2026-08-08T11:34:03.199Z] [OUTPUT] Experimental: false
+[2026-08-08T11:34:03.199Z] [OUTPUT] No Proxy: hubproxy.docker.internal
+[2026-08-08T11:34:03.199Z] [OUTPUT] Insecure Registries:
+[2026-08-08T11:34:03.199Z] [OUTPUT] hubproxy.docker.internal:5555
+[2026-08-08T11:34:03.199Z] [OUTPUT] ::1/128
+[2026-08-08T11:34:03.199Z] [OUTPUT] 127.0.0.0/8
+[2026-08-08T11:34:03.199Z] [OUTPUT] Live Restore Enabled: false
+[2026-08-08T11:34:03.199Z] [OUTPUT] Firewall Backend: iptables
+[2026-08-08T11:34:03.205Z] [SUCCESS] Daemon Running
+[2026-08-08T11:34:03.265Z] [INFO] Checking Buildx...
+[2026-08-08T11:34:03.433Z] [OUTPUT] github.com/docker/buildx v0.35.0-desktop.2 b554ce1decd8b509893b1e7c6227eabfb923d094
+[2026-08-08T11:34:03.469Z] [SUCCESS] Buildx Installed
+[2026-08-08T11:34:03.719Z] [INFO] Docker Status Context:
+Docker Version: 29.6.2
+Daemon: Running
+BuildKit: Enabled
+Buildx: Installed
+Builder: desktop-linux
+[2026-08-08T11:34:03.719Z] [INFO] Generating Nixpacks build plan and Dockerfile...
+[2026-08-08T11:34:04.614Z] [OUTPUT] ╔══════════════════════════════ Nixpacks v1.41.0 ══════════════════════════════╗
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║ setup      │ pkgs: nginx                                                     ║
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║            │ cmds: mkdir /etc/nginx/ /var/log/nginx/ /var/cache/nginx/       ║
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║──────────────────────────────────────────────────────────────────────────────║
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║ start      │ [[ -z "${PORT}" ]] && echo "Environment variable PORT not       ║
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║            │ found. Using PORT 80" || sed -i "s/0.0.0.0:80/$PORT/g"          ║
+[2026-08-08T11:34:04.614Z] [OUTPUT] ║            │ /assets/nginx.conf && nginx -c /assets/nginx.conf               ║
+[2026-08-08T11:34:04.615Z] [OUTPUT] ╚══════════════════════════════════════════════════════════════════════════════╝
+[2026-08-08T11:34:04.618Z] [OUTPUT] Saved output to:
+[2026-08-08T11:34:04.618Z] [OUTPUT] C:\Users\AYUSHY~1\AppData\Local\Temp\deployx\775cfc9d-516b-47e4-8358-a7a7a85e36d7_78f487c4-58a7-42ff-b335-3abfc91d9262
+[2026-08-08T11:34:04.630Z] [SUCCESS] Nixpacks plan generated.
+[2026-08-08T11:34:04.631Z] [INFO] Building Docker image...
+[2026-08-08T11:34:05.426Z] [OUTPUT] #0 building with "desktop-linux" instance using docker driver
+[2026-08-08T11:34:05.426Z] [OUTPUT] #1 [internal] load build definition from Dockerfile
+[2026-08-08T11:34:05.426Z] [OUTPUT] #1 transferring dockerfile: 763B 0.0s done
+[2026-08-08T11:34:05.427Z] [OUTPUT] #1 DONE 0.1s
+[2026-08-08T11:34:05.530Z] [OUTPUT] #2 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+[2026-08-08T11:34:05.531Z] [OUTPUT] #2 DONE 0.1s
+[2026-08-08T11:34:05.633Z] [OUTPUT] #3 [internal] load .dockerignore
+[2026-08-08T11:34:05.633Z] [OUTPUT] #3 transferring context: 118B 0.0s done
+[2026-08-08T11:34:05.633Z] [OUTPUT] #3 DONE 0.1s
+[2026-08-08T11:34:05.762Z] [OUTPUT] #4 [1/8] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de
+[2026-08-08T11:34:05.762Z] [OUTPUT] #4 resolve ghcr.io/railwayapp/nixpacks:ubuntu-1745885067@sha256:d45c89d80e13d7ad0fd555b5130f22a866d9dd10e861f589932303ef2314c7de 0.1s done
+[2026-08-08T11:34:05.762Z] [OUTPUT] #4 DONE 0.1s
+[2026-08-08T11:34:05.762Z] [OUTPUT] #5 [internal] load build context
+[2026-08-08T11:34:05.762Z] [OUTPUT] #5 transferring context: 25.66kB 0.1s done
+[2026-08-08T11:34:05.862Z] [OUTPUT] #5 DONE 0.1s
+[2026-08-08T11:34:05.863Z] [OUTPUT] #6 [2/8] WORKDIR /app/
+[2026-08-08T11:34:05.863Z] [OUTPUT] #7 [3/8] COPY .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix
+[2026-08-08T11:34:05.863Z] [OUTPUT] #6 CACHED
+[2026-08-08T11:34:05.863Z] [OUTPUT] #7 CACHED
+[2026-08-08T11:34:05.863Z] [OUTPUT] #8 [4/8] RUN nix-env -if .nixpacks/nixpkgs-5148520bfab61f99fd25fb9ff7bfbb50dad3c9db.nix && nix-collect-garbage -d
+[2026-08-08T11:34:05.863Z] [OUTPUT] #8 CACHED
+[2026-08-08T11:34:05.863Z] [OUTPUT] #9 [5/8] COPY .nixpacks/assets /assets/
+[2026-08-08T11:34:05.863Z] [OUTPUT] #9 CACHED
+[2026-08-08T11:34:05.863Z] [OUTPUT] #10 [6/8] COPY . /app/.
+[2026-08-08T11:34:05.863Z] [OUTPUT] #10 DONE 0.1s
+[2026-08-08T11:34:06.018Z] [OUTPUT] #11 [7/8] RUN  mkdir /etc/nginx/ /var/log/nginx/ /var/cache/nginx/
+[2026-08-08T11:34:06.619Z] [OUTPUT] #11 DONE 0.8s
+[2026-08-08T11:34:06.719Z] [OUTPUT] #12 [8/8] COPY . /app
+[2026-08-08T11:34:06.719Z] [OUTPUT] #12 DONE 0.1s
+[2026-08-08T11:34:06.720Z] [OUTPUT] #13 exporting to image
+[2026-08-08T11:34:06.869Z] [OUTPUT] #13 exporting layers
+[2026-08-08T11:34:06.999Z] [OUTPUT] #13 exporting layers 0.3s done
+[2026-08-08T11:34:07.150Z] [OUTPUT] #13 exporting manifest sha256:0a4b0d6354aae4fa88ad080e84e494f27a141e078cccb13b6ca52db84d1448b9 0.0s done
+[2026-08-08T11:34:07.151Z] [OUTPUT] #13 exporting config sha256:2f7befcc8f67acfc1bd82e6f04a0f8d439f6b5b4c77072f4b8dc6415e6d5c41c 0.0s done
+[2026-08-08T11:34:07.151Z] [OUTPUT] #13 exporting attestation manifest sha256:1661a1ae3b7ecb9ac77b7be18ed8d78a4b97ad3c5707df4079c87c6b053f62bd 0.1s done
+[2026-08-08T11:34:07.151Z] [OUTPUT] #13 exporting manifest list sha256:f61088a0a9c60b82212f8ace66d5bbb0c7fe14114c084b45c3006378c4dea64a
+[2026-08-08T11:34:07.300Z] [OUTPUT] #13 exporting manifest list sha256:f61088a0a9c60b82212f8ace66d5bbb0c7fe14114c084b45c3006378c4dea64a 0.0s done
+[2026-08-08T11:34:07.301Z] [OUTPUT] #13 naming to docker.io/library/deployx-project-775cfc9d-516b-47e4-8358-a7a7a85e36d7:latest done
+[2026-08-08T11:34:07.301Z] [OUTPUT] #13 unpacking to docker.io/library/deployx-project-775cfc9d-516b-47e4-8358-a7a7a85e36d7:latest 0.1s done
+[2026-08-08T11:34:07.504Z] [OUTPUT] #13 DONE 0.6s
+[2026-08-08T11:34:07.595Z] [OUTPUT] View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/zp2enehoq8r4mobwgclk5iwse
+[2026-08-08T11:34:07.631Z] [SUCCESS] Image built successfully.
+[2026-08-08T11:34:07.651Z] [INFO] Attempting to start Docker container with dynamic port mapping...
+[2026-08-08T11:34:07.943Z] [OUTPUT] 5c1e9150bddfc0a95c1cd29638966e9f99ae596d78ddc8bc8f8566be68df1ca0
+[2026-08-08T11:34:10.453Z] [INFO] Container is running. Docker assigned dynamic host port 32782. Waiting for health check...
+[2026-08-08T11:34:10.712Z] [INFO] Provisioning public URL via Cloudflare...
+[2026-08-08T11:34:19.802Z] [SUCCESS] Container running successfully on port 32782.
+[2026-08-08T11:34:19.802Z] [SUCCESS] Public URL ready: https://brochure-rica-productive-clinical.trycloudflare.com

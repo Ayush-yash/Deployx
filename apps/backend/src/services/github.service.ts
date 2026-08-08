@@ -87,7 +87,7 @@ export class GitHubService {
             if (trimmed && !trimmed.startsWith('#')) {
               const match = trimmed.match(/^([A-Za-z0-9_]+)=(.*)$/);
               if (match) {
-                const key = match[1];
+                const key = match[1] as string;
                 let value = match[2] || '';
                 // Remove quotes if present
                 if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
@@ -107,6 +107,6 @@ export class GitHubService {
       }
     }
     
-    return [];
+    return {};
   }
 }
