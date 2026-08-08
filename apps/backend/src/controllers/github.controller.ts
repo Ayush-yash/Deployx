@@ -9,7 +9,7 @@ export const getAuthUrl = async (req: Request, res: Response) => {
     const clientId = process.env.GITHUB_CLIENT_ID || 'dummy_client_id';
     const state = crypto.randomBytes(16).toString('hex');
     
-    const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&state=${state}&scope=read:user user:email repo`;
+    const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&state=${state}&scope=read:user user:email repo&prompt=consent`;
     
     res.json({ success: true, data: { url } });
   } catch (error: any) {
@@ -72,7 +72,7 @@ export const getProfile = async (req: Request, res: Response) => {
 
 export const disconnect = async (req: Request, res: Response) => {
   try {
-    await prisma.gitHubConnection.delete({ where: { userId: req.user!.id } });
+    await prisma.gitHubConnection.deleteMany({ where: { userId: req.user!.id } });
     res.json({ success: true, data: null });
   } catch (error: any) {
     res.status(500).json({ success: false, message: error.message });
