@@ -12,12 +12,102 @@ import { emitDeploymentEvent, emitToUser } from '../socket';
 import { NotificationService } from './notification.service';
 import { PortAllocationService } from './port-allocation.service';
 import { Tunnel } from 'cloudflared';
+import localtunnel from 'localtunnel';
 import { KubernetesService } from './kubernetes.service';
 import { prisma } from '../db';
 
 const execAsync = promisify(exec);
 
 export const activeTunnels = new Map<string, any>();
+
+export function closeTunnel(tunnel: any) {
+  if (!tunnel) return;
+  try {
+    if (typeof tunnel.close === 'function') {
+      tunnel.close();
+    } else if (typeof tunnel.stop === 'function') {
+      tunnel.stop();
+    } else if (typeof tunnel.kill === 'function') {
+      tunnel.kill();
+    }
+  } catch (e) {
+    // Ignore cleanup errors
+  }
+}
+
+async function provisionPublicTunnel(
+  port: number,
+  projectName: string,
+  projectId: string,
+  deploymentId: string,
+  decryptedEnvs: Record<string, string>,
+  emitLog: (type: 'INFO' | 'SUCCESS' | 'WARNING' | 'ERROR', msg: string) => void
+): Promise<string> {
+  // Clean up any existing tunnel for this deployment
+  const existingTunnel = activeTunnels.get(deploymentId);
+  if (existingTunnel) {
+    closeTunnel(existingTunnel);
+    activeTunnels.delete(deploymentId);
+  }
+
+  // 1. Permanent Cloudflare Tunnel Token (if token is provided in env)
+  const cfToken = decryptedEnvs['CLOUDFLARE_TUNNEL_TOKEN'] || process.env.CLOUDFLARE_TUNNEL_TOKEN;
+  if (cfToken) {
+    emitLog('INFO', 'Provisioning permanent public URL using Cloudflare Tunnel Token...');
+    try {
+      const cfProc = spawn('cloudflared', ['tunnel', 'run', '--token', cfToken], { shell: true });
+      activeTunnels.set(deploymentId, cfProc);
+      const customDomain = decryptedEnvs['CLOUDFLARE_DOMAIN'] || process.env.CLOUDFLARE_DOMAIN;
+      if (customDomain) {
+        const fullUrl = customDomain.startsWith('http') ? customDomain : `https://${customDomain}`;
+        emitLog('SUCCESS', `Permanent Cloudflare Domain ready: ${fullUrl}`);
+        return fullUrl;
+      }
+    } catch (e) {
+      emitLog('WARNING', `Cloudflare Tunnel Token failed, falling back to localtunnel...`);
+    }
+  }
+
+  // 2. Fixed Permanent Subdomain via LocalTunnel (Zero-config permanent URL)
+  // Subdomain is deterministically generated from Project Name & ID so it NEVER changes on redeploy or restart!
+  const cleanName = projectName.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 15);
+  const fixedSubdomain = `deployx-${cleanName}-${projectId.slice(0, 5)}`;
+  
+  try {
+    emitLog('INFO', `Provisioning permanent URL with fixed subdomain (${fixedSubdomain})...`);
+    const lt = await localtunnel({ port, subdomain: fixedSubdomain });
+    activeTunnels.set(deploymentId, lt);
+    
+    lt.on('close', () => {
+      activeTunnels.delete(deploymentId);
+    });
+
+    if (lt.url) {
+      emitLog('SUCCESS', `Permanent Public URL ready: ${lt.url}`);
+      return lt.url;
+    }
+  } catch (err: any) {
+    emitLog('WARNING', `Fixed subdomain busy or unavailable. Trying Cloudflare quick tunnel...`);
+  }
+
+  // 3. Fallback: Cloudflare Quick Tunnel
+  emitLog('INFO', 'Provisioning public URL via Cloudflare Quick Tunnel...');
+  const tunnel = Tunnel.quick(`localhost:${port}`);
+  activeTunnels.set(deploymentId, tunnel);
+
+  const publicUrl = await new Promise((resolve, reject) => {
+    tunnel.once('url', resolve);
+    tunnel.once('error', reject);
+    setTimeout(() => reject(new Error('Timeout waiting for tunnel URL')), 15000);
+  }) as string;
+
+  tunnel.on('exit', () => {
+    activeTunnels.delete(deploymentId);
+  });
+
+  emitLog('SUCCESS', `Public URL ready: ${publicUrl}`);
+  return publicUrl;
+}
 
 export class DeploymentService {
   static async startDeployment(deploymentId: string, projectId: string, userId: string) {
@@ -687,17 +777,14 @@ CMD ["nginx", "-g", "daemon off;"]`;
         
         await new Promise(resolve => setTimeout(resolve, 3000));
         
-        emitLog('INFO', 'Provisioning public URL via Cloudflare...');
-        const tunnel = Tunnel.quick(`localhost:${finalAssignedPort}`);
-        activeTunnels.set(deploymentId, tunnel);
-        
-        const publicUrl = await new Promise((resolve, reject) => {
-          tunnel.once('url', resolve);
-          tunnel.once('error', reject);
-          setTimeout(() => reject(new Error('Timeout waiting for tunnel URL')), 15000);
-        }) as string;
-        
-        emitLog('SUCCESS', `Public URL ready: ${publicUrl}`);
+        const publicUrl = await provisionPublicTunnel(
+          finalAssignedPort,
+          project.name,
+          project.id,
+          deploymentId,
+          decryptedEnvs,
+          emitLog
+        );
         
         await prisma.deployment.update({
            where: { id: deploymentId },
@@ -833,26 +920,16 @@ CMD ["nginx", "-g", "daemon off;"]`;
 
           let publicUrl = '';
           try {
-            emitLog('INFO', 'Provisioning public URL via Cloudflare...');
-            const tunnel = Tunnel.quick(`localhost:${finalAssignedPort}`);
-            activeTunnels.set(deploymentId, tunnel);
-            
-            publicUrl = await new Promise((resolve, reject) => {
-              tunnel.once('url', resolve);
-              tunnel.once('error', reject);
-              setTimeout(() => reject(new Error('Timeout waiting for tunnel URL')), 15000);
-            }) as string;
-            
-            emitLog('SUCCESS', `Public URL ready: ${publicUrl}`);
-            
-            tunnel.on('exit', () => {
-              activeTunnels.delete(deploymentId);
-            });
+            publicUrl = await provisionPublicTunnel(
+              finalAssignedPort,
+              project.name,
+              project.id,
+              deploymentId,
+              decryptedEnvs,
+              emitLog
+            );
           } catch (e) {
             emitLog('WARNING', 'Failed to provision public URL.');
-            const t = activeTunnels.get(deploymentId);
-            if (t) t.stop();
-            activeTunnels.delete(deploymentId);
           }
 
           emitLog('SUCCESS', `Container running successfully on port ${finalAssignedPort}.`);
@@ -988,7 +1065,7 @@ CMD ["nginx", "-g", "daemon off;"]`;
     
     const tunnel = activeTunnels.get(deploymentId);
     if (tunnel) {
-      tunnel.stop();
+      closeTunnel(tunnel);
       activeTunnels.delete(deploymentId);
     }
 
@@ -1039,6 +1116,12 @@ CMD ["nginx", "-g", "daemon off;"]`;
       } catch (e) {
         // ignore
       }
+    }
+
+    const tunnel = activeTunnels.get(deploymentId);
+    if (tunnel) {
+      closeTunnel(tunnel);
+      activeTunnels.delete(deploymentId);
     }
 
     await prisma.deployment.delete({
