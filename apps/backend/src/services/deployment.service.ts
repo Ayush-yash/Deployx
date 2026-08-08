@@ -233,7 +233,7 @@ export class DeploymentService {
                     'src/App.tsx', 'src/App.jsx', 'src/App.ts', 'src/App.js',
                     'App.tsx', 'App.jsx', 'App.ts', 'App.js'
                   ];
-                  const existingCandidates = [];
+                  const existingCandidates: string[] = [];
                   
                   for (const candidate of candidates) {
                     const candidatePath = path.join(workspace, ...candidate.split('/'));
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
       emitLog('INFO', 'Generating Nixpacks build plan and Dockerfile...');
       
       let buildSuccess = false;
-      let buildError = null;
+      let buildError: any = null;
       
       try {
          // For SPA projects (React/Vite/Vue/Angular), generate a custom nginx Dockerfile
