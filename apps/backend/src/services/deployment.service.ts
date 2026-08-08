@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const spaDockerfile = `FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 COPY . .
 ${buildArgs}
 RUN npm run build
