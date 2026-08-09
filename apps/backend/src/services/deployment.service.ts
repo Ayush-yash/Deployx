@@ -631,31 +631,75 @@ CMD ["nginx", "-g", "daemon off;"]`;
                }
             }
          } else {
-            // Non-SPA: use Nixpacks (Node.js backend / fullstack)
-            const envOverrides: Record<string, string> = {};
-            await streamCommand(generateCmd, envOverrides);
-            emitLog('SUCCESS', 'Nixpacks plan generated.');
-            
-            // Now run docker build natively on host
-            emitLog('INFO', 'Building Docker image...');
-            let dockerBuildCmd = `docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`;
-            
-            // Nixpacks requires BuildKit for --mount=type=cache
-            dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+            // Non-SPA: check for existing Dockerfile or use Nixpacks
+            let hasExistingDockerfile = false;
+            try {
+               await fs.stat(path.join(workspace, 'Dockerfile'));
+               hasExistingDockerfile = true;
+            } catch (e) {}
 
-            for (let attempt = 1; attempt <= 3; attempt++) {
-               try {
-                  if (attempt > 1) {
-                     emitLog('WARNING', `Docker build retry ${attempt}/3...`);
-                     await new Promise(resolve => setTimeout(resolve, 2000));
+            if (hasExistingDockerfile) {
+               emitLog('INFO', 'Found existing Dockerfile in repository root. Building directly with Docker...');
+               let dockerBuildCmd = `docker build -t ${imageName} "${workspace}"`;
+               dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+
+               for (let attempt = 1; attempt <= 3; attempt++) {
+                  try {
+                     if (attempt > 1) {
+                        emitLog('WARNING', `Docker build retry ${attempt}/3...`);
+                        await new Promise(resolve => setTimeout(resolve, 2000));
+                     }
+                     await streamCommand(dockerBuildCmd);
+                     emitLog('SUCCESS', 'Docker image built successfully using existing Dockerfile.');
+                     buildSuccess = true;
+                     break;
+                  } catch (err) {
+                     buildError = err;
+                     emitLog('ERROR', `Build attempt ${attempt} failed.`);
                   }
-                  await streamCommand(dockerBuildCmd);
-                  emitLog('SUCCESS', 'Image built successfully.');
-                  buildSuccess = true;
-                  break;
-               } catch (err) {
-                  buildError = err;
-                  emitLog('ERROR', `Build attempt ${attempt} failed.`);
+               }
+            } else {
+               let nixpacksSuccess = false;
+               try {
+                  const envOverrides: Record<string, string> = {};
+                  await streamCommand(generateCmd, envOverrides);
+                  emitLog('SUCCESS', 'Nixpacks plan generated.');
+                  nixpacksSuccess = true;
+               } catch (nixErr: any) {
+                  emitLog('WARNING', `Nixpacks failed to generate plan: ${nixErr.message}`);
+                  emitLog('INFO', 'Generating standard Node.js fallback Dockerfile...');
+                  
+                  const fallbackDockerfile = `FROM node:20-alpine
+WORKDIR /app
+COPY . .
+RUN if [ -f package.json ]; then npm install --legacy-peer-deps; fi
+EXPOSE 3000 8080 5000 80
+CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
+
+                  await fs.writeFile(path.join(workspace, 'Dockerfile'), fallbackDockerfile);
+               }
+
+               emitLog('INFO', 'Building Docker image...');
+               let dockerBuildCmd = nixpacksSuccess 
+                  ? `docker build -t ${imageName} -f "${workspace}/.nixpacks/Dockerfile" "${workspace}"`
+                  : `docker build -t ${imageName} "${workspace}"`;
+               
+               dockerBuildCmd = isWin ? `cmd /C "set DOCKER_BUILDKIT=1&& ${dockerBuildCmd}"` : `DOCKER_BUILDKIT=1 ${dockerBuildCmd}`;
+
+               for (let attempt = 1; attempt <= 3; attempt++) {
+                  try {
+                     if (attempt > 1) {
+                        emitLog('WARNING', `Docker build retry ${attempt}/3...`);
+                        await new Promise(resolve => setTimeout(resolve, 2000));
+                     }
+                     await streamCommand(dockerBuildCmd);
+                     emitLog('SUCCESS', 'Image built successfully.');
+                     buildSuccess = true;
+                     break;
+                  } catch (err) {
+                     buildError = err;
+                     emitLog('ERROR', `Build attempt ${attempt} failed.`);
+                  }
                }
             }
          }

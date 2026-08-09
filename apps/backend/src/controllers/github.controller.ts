@@ -31,6 +31,10 @@ export const handleCallback = async (req: Request, res: Response) => {
     
     const encryptedToken = encrypt(accessToken);
 
+    await prisma.gitHubConnection.deleteMany({
+      where: { githubId: profile.id.toString(), userId: { not: userId } }
+    });
+
     await prisma.gitHubConnection.upsert({
       where: { userId },
       update: {
