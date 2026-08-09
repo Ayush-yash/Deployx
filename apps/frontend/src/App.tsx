@@ -62,12 +62,8 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/dashboard" />} />
         
-        <Route path="/login" element={
-          <PageTransition><Login /></PageTransition>
-        } />
-        <Route path="/register" element={
-          <PageTransition><Register /></PageTransition>
-        } />
+        <Route path="/login" element={<Navigate to="/dashboard" />} />
+        <Route path="/register" element={<Navigate to="/dashboard" />} />
 
         <Route path="/dashboard" element={
           <ProtectedRoute>

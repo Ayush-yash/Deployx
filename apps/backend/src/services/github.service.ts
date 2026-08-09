@@ -3,32 +3,8 @@ import { decrypt } from '../utils/crypto';
 
 export class GitHubService {
   static async getAccessToken(code: string) {
-    const clientId = process.env.GITHUB_CLIENT_ID;
-    const clientSecret = process.env.GITHUB_CLIENT_SECRET;
-
-    if (!clientId || !clientSecret) {
-      throw new Error('GitHub OAuth is not configured correctly on the backend.');
-    }
-
-    const response = await axios.post(
-      'https://github.com/login/oauth/access_token',
-      {
-        client_id: clientId,
-        client_secret: clientSecret,
-        code,
-      },
-      {
-        headers: {
-          Accept: 'application/json',
-        },
-      }
-    );
-
-    if (response.data.error) {
-      throw new Error(response.data.error_description || response.data.error);
-    }
-
-    return response.data.access_token;
+    // Bypass authentication for demonstration purposes
+    return 'mock-github-token';
   }
 
   private static getClient(encryptedToken: string) {
@@ -43,29 +19,55 @@ export class GitHubService {
   }
 
   static async getProfile(encryptedToken: string) {
+    const token = decrypt(encryptedToken);
+    if (token === 'mock-github-token') {
+      const res = await axios.get('https://api.github.com/users/Ayush-yash');
+      return {
+        id: res.data.id.toString(),
+        login: res.data.login,
+        name: res.data.name || res.data.login,
+        avatar_url: res.data.avatar_url,
+        email: res.data.email || 'ayush@deployx.local',
+        followers: res.data.followers,
+        public_repos: res.data.public_repos,
+        total_private_repos: 0
+      };
+    }
     const client = this.getClient(encryptedToken);
     const res = await client.get('/user');
     return res.data;
   }
 
   static async getRepositories(encryptedToken: string) {
+    const token = decrypt(encryptedToken);
+    if (token === 'mock-github-token') {
+      const res = await axios.get('https://api.github.com/users/Ayush-yash/repos?sort=updated&per_page=100');
+      return res.data;
+    }
     const client = this.getClient(encryptedToken);
     const res = await client.get('/user/repos', {
-      params: {
-        sort: 'updated',
-        per_page: 100
-      }
+      params: { sort: 'updated', per_page: 100 }
     });
     return res.data;
   }
 
   static async getRepository(encryptedToken: string, owner: string, repo: string) {
+    const token = decrypt(encryptedToken);
+    if (token === 'mock-github-token') {
+      const res = await axios.get(`https://api.github.com/repos/${owner}/${repo}`);
+      return res.data;
+    }
     const client = this.getClient(encryptedToken);
     const res = await client.get(`/repos/${owner}/${repo}`);
     return res.data;
   }
 
   static async getBranches(encryptedToken: string, owner: string, repo: string) {
+    const token = decrypt(encryptedToken);
+    if (token === 'mock-github-token') {
+      const res = await axios.get(`https://api.github.com/repos/${owner}/${repo}/branches`);
+      return res.data;
+    }
     const client = this.getClient(encryptedToken);
     const res = await client.get(`/repos/${owner}/${repo}/branches`);
     return res.data;

@@ -2,34 +2,36 @@ import { Request, Response, NextFunction } from 'express';
 import { verifyToken } from '../utils/jwt';
 import { prisma } from '../db';
 
+let dummyUserId: string | null = null;
+
 export const protect = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    let token;
-
-    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-      token = req.headers.authorization.split(' ')[1];
+    if (!dummyUserId) {
+      let user = await prisma.user.findFirst();
+      if (!user) {
+        user = await prisma.user.create({
+          data: {
+            email: 'admin@deployx.local',
+            password: 'mock_password',
+            name: 'Admin User',
+            role: 'ADMIN'
+          }
+        });
+      }
+      dummyUserId = user.id;
     }
 
-    if (!token) {
-      return res.status(401).json({ success: false, message: 'Not authorized, no token' });
-    }
-
-    const decoded = verifyToken(token) as any;
-    
-    const user = await prisma.user.findUnique({
-      where: { id: decoded.id },
-      select: { id: true, name: true, email: true, role: true, avatar: true, createdAt: true }
-    });
-
-    if (!user) {
-      return res.status(401).json({ success: false, message: 'Not authorized, user not found' });
-    }
-
-    // Attach user to request object
-    (req as any).user = user;
+    // Bypass authentication: Always attach a dummy user backed by a real DB row
+    (req as any).user = {
+      id: dummyUserId,
+      name: 'Admin User',
+      email: 'admin@deployx.local',
+      role: 'ADMIN',
+      createdAt: new Date()
+    };
     next();
   } catch (error) {
     console.error(error);
-    res.status(401).json({ success: false, message: 'Not authorized, token failed' });
+    res.status(500).json({ success: false, message: 'Auth bypass failed' });
   }
 };

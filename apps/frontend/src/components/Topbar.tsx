@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, LogOut } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { NotificationDropdown } from './NotificationDropdown';
 
@@ -34,13 +34,6 @@ export const Topbar: React.FC<TopbarProps> = ({ onMenuClick }) => {
           <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center font-semibold text-white">
             {user?.name?.charAt(0).toUpperCase() || 'U'}
           </div>
-          <button 
-            onClick={logout}
-            className="p-2 text-slate-400 hover:text-red-400 rounded-lg hover:bg-slate-800 transition-colors"
-            title="Logout"
-          >
-            <LogOut className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </header>

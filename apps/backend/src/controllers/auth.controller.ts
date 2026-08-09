@@ -7,13 +7,13 @@ import { generateToken } from '../utils/jwt';
 
 const registerSchema = z.object({
   name: z.string().min(2),
-  email: z.string().email(),
+  email: z.string().email().transform(e => e.toLowerCase().trim()),
   password: z.string().min(6)
 });
 
 const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6)
+  email: z.string().email().transform(e => e.toLowerCase().trim()),
+  password: z.string().min(1, 'Password is required')
 });
 
 

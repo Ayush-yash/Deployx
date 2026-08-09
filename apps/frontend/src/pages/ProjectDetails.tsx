@@ -7,6 +7,7 @@ import { GlassCard } from '../components/GlassCard';
 import { FrameworkBadge, StatusBadge } from '../components/ProjectCard';
 import { KubernetesDashboard } from '../components/KubernetesDashboard';
 import { Loader2, Edit2, Play, GitBranch, Box, Settings, Clock, CheckCircle, XCircle, Webhook, Copy, RefreshCw, Zap, ZapOff, ArrowRight, ExternalLink } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -44,6 +45,9 @@ const ProjectDetails: React.FC = () => {
       } else {
         throw new Error('Invalid deployment ID returned');
       }
+    },
+    onError: (error: any) => {
+      toast.error(error.response?.data?.message || 'Deployment failed');
     }
   });
 

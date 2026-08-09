@@ -59,8 +59,20 @@ export const getProfile = async (req: Request, res: Response) => {
       return res.status(404).json({ success: false, message: 'GitHub account not connected' });
     }
 
-    const liveProfile = await GitHubService.getProfile(conn.accessToken); // The service handles decrypt internally
-    res.json({ success: true, data: { ...conn, ...liveProfile } });
+    const liveProfile = await GitHubService.getProfile(conn.accessToken);
+    res.json({ 
+      success: true, 
+      data: { 
+        ...conn, 
+        username: liveProfile.login || conn.username,
+        displayName: liveProfile.name || conn.displayName,
+        avatarUrl: liveProfile.avatar_url || conn.avatarUrl,
+        email: liveProfile.email || conn.email,
+        followers: liveProfile.followers,
+        public_repos: liveProfile.public_repos,
+        total_private_repos: liveProfile.total_private_repos
+      } 
+    });
   } catch (error: any) {
     if (error.response?.status === 401) {
       await prisma.gitHubConnection.delete({ where: { userId: req.user!.id } });

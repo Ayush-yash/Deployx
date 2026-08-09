@@ -12,36 +12,23 @@ const GitHubCallback: React.FC = () => {
   const [isPending, setIsPending] = React.useState(true);
   const [error, setError] = React.useState<Error | null>(null);
 
-  const hasConnected = React.useRef(false);
-
   useEffect(() => {
-    let isMounted = true;
-    
     if (!code) {
       navigate('/dashboard/github');
       return;
     }
 
-    if (hasConnected.current) return;
-    hasConnected.current = true;
-
     const connect = async () => {
       try {
         await githubService.connectCallback(code);
-        if (isMounted) navigate('/dashboard/github');
+        navigate('/dashboard/github');
       } catch (err: any) {
-        if (isMounted) {
-          setError(err.response?.data?.message ? new Error(err.response.data.message) : err);
-          setIsPending(false);
-        }
+        setError(err.response?.data?.message ? new Error(err.response.data.message) : err);
+        setIsPending(false);
       }
     };
 
     connect();
-
-    return () => {
-      isMounted = false;
-    };
   }, [code, navigate]);
 
   return (

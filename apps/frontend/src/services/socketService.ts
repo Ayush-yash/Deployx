@@ -2,7 +2,7 @@ import { io, Socket } from 'socket.io-client';
 
 class SocketService {
   private socket: Socket | null = null;
-  private url = import.meta.env.VITE_API_URL?.replace('/api', '') || `http://${window.location.hostname}:3000`;
+  private url = 'http://127.0.0.1:3000';
 
   connect() {
     if (this.socket) return;

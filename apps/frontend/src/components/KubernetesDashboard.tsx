@@ -9,7 +9,7 @@ export const KubernetesDashboard: React.FC<{ projectId: string }> = ({ projectId
   const { data: status, isLoading } = useQuery({
     queryKey: ['k8s-status', projectId],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:3000/api/kubernetes/project/${projectId}/status`, {
+      const res = await fetch(`http://127.0.0.1:3000/api/kubernetes/project/${projectId}/status`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       if (!res.ok) throw new Error('Failed to fetch status');
@@ -21,7 +21,7 @@ export const KubernetesDashboard: React.FC<{ projectId: string }> = ({ projectId
   const { data: clusters } = useQuery({
     queryKey: ['k8s-clusters'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:3000/api/kubernetes/clusters`, {
+      const res = await fetch(`http://127.0.0.1:3000/api/kubernetes/clusters`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       if (!res.ok) return [];
@@ -31,7 +31,7 @@ export const KubernetesDashboard: React.FC<{ projectId: string }> = ({ projectId
 
   const linkMutation = useMutation({
     mutationFn: async (clusterId: string) => {
-      const res = await fetch(`http://localhost:3000/api/kubernetes/link`, {
+      const res = await fetch(`http://127.0.0.1:3000/api/kubernetes/link`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

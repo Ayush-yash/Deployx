@@ -103,7 +103,7 @@ const KubernetesSettingsCard: React.FC = () => {
     setLoading(true);
     setMessage('');
     try {
-      const res = await fetch('http://localhost:3000/api/kubernetes/clusters/auto-discover', {
+      const res = await fetch('http://127.0.0.1:3000/api/kubernetes/clusters/auto-discover', {
         method: 'POST',
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });

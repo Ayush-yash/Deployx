@@ -19,7 +19,7 @@ interface AuthContextType {
 }
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || `http://${window.location.hostname}:3000/api`,
+  baseURL: 'http://127.0.0.1:3000/api',
 });
 
 api.interceptors.request.use((config) => {
@@ -57,27 +57,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   useEffect(() => {
     const initAuth = async () => {
-      const token = localStorage.getItem('token');
-      if (token) {
-        try {
-          const decoded: any = jwtDecode(token);
-          // Guard against tokens without exp claim
-          if (decoded && typeof decoded.exp === 'number' && decoded.exp * 1000 < Date.now()) {
-            logout();
-            toast.error('Session expired');
-          } else {
-            const res = await api.get('/auth/me');
-            if (res.data.success) {
-              setUser(res.data.user);
-              setIsAuthenticated(true);
-            } else {
-              logout();
-            }
-          }
-        } catch (err) {
-          logout();
-        }
-      }
+      // Bypass authentication: Always provide a dummy user
+      setUser({
+        id: 'dummy-admin-id',
+        name: 'Ayush Yash',
+        email: 'admin@deployx.local'
+      });
+      setIsAuthenticated(true);
       setIsLoading(false);
     };
 

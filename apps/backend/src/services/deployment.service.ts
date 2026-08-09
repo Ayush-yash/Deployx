@@ -75,7 +75,7 @@ async function provisionPublicTunnel(
   
   try {
     emitLog('INFO', `Provisioning permanent URL with fixed subdomain (${fixedSubdomain})...`);
-    const lt = await localtunnel({ port, subdomain: fixedSubdomain });
+    const lt = await localtunnel({ port, subdomain: fixedSubdomain, local_host: '127.0.0.1' });
     activeTunnels.set(deploymentId, lt);
     
     lt.on('close', () => {

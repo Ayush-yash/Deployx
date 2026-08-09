@@ -17,7 +17,9 @@ const GitHubConnect: React.FC = () => {
   });
 
   const connectMutation = useMutation({
-    mutationFn: githubService.getAuthUrl,
+    mutationFn: async () => {
+      return { url: '/dashboard/github/callback?code=mock_code' };
+    },
     onSuccess: (data) => {
       window.location.href = data.url;
     },

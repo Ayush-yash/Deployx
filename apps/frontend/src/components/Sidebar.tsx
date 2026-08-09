@@ -53,17 +53,6 @@ const Sidebar: React.FC = () => {
         })}
       </div>
       
-      <div className="p-4 border-t border-white/5">
-        <div className="flex items-center p-3 glass rounded-lg">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-blue-500 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg">
-            A
-          </div>
-          <div className="ml-3">
-            <p className="text-sm font-medium text-white">Admin User</p>
-            <p className="text-xs text-gray-400">Pro Plan</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
