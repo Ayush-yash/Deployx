@@ -741,8 +741,22 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
       
       let finalAssignedPort = 0;
       let finalContainerId = '';
-      // SPA projects use nginx on port 80; non-SPA use project.port
-      const internalPort = isSpa ? 80 : (project.port || 5000);
+      let internalPort = isSpa ? 80 : (project.port || 5000);
+      try {
+        const { stdout: imgInspect } = await execAsync(`docker inspect --format="{{json .Config.ExposedPorts}}" ${imageName}`);
+        const exposed = JSON.parse(imgInspect.trim() || '{}');
+        if (exposed && typeof exposed === 'object') {
+          const keys = Object.keys(exposed);
+          if (keys.length > 0) {
+            const exposedPortStr = keys[0].split('/')[0];
+            const parsedPort = parseInt(exposedPortStr, 10);
+            if (!isNaN(parsedPort) && parsedPort > 0) {
+              internalPort = parsedPort;
+              emitLog('INFO', `Detected exposed port ${internalPort} from Docker image configuration.`);
+            }
+          }
+        }
+      } catch (e) {}
       
 
       if ((project as any).clusterId && (project as any).KubernetesCluster) {
@@ -904,11 +918,21 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
 
         // Retrieve the dynamically allocated port using docker port
         const { stdout: dockerPortOutput } = await execAsync(`docker port ${containerName}`);
-        const match = dockerPortOutput.match(/0\.0\.0\.0:(\d+)/) || dockerPortOutput.match(/\[::\]:(\d+)/);
+        const match = dockerPortOutput.match(/:(\d+)\s*$/m) || dockerPortOutput.match(/0\.0\.0\.0:(\d+)/) || dockerPortOutput.match(/\[::\]:(\d+)/) || dockerPortOutput.match(/127\.0\.0\.1:(\d+)/);
         
         if (match && match[1]) {
           finalAssignedPort = parseInt(match[1], 10);
         } else {
+          try {
+             const { stdout: portInspect } = await execAsync(`docker inspect --format="{{range $p, $conf := .NetworkSettings.Ports}}{{range $conf}}{{.HostPort}} {{end}}{{end}}" ${containerName}`);
+             const hostPortStr = portInspect.trim().split(/\s+/)[0];
+             if (hostPortStr && !isNaN(parseInt(hostPortStr, 10))) {
+                finalAssignedPort = parseInt(hostPortStr, 10);
+             }
+          } catch (e) {}
+        }
+
+        if (!finalAssignedPort) {
           await execAsync(`docker rm -f ${containerName}`);
           throw new Error('Docker did not expose any ports. Did the image EXPOSE a port?');
         }
