@@ -1017,28 +1017,30 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
             }
           });
 
-          if (publicUrl) {
+          const liveAppUrl = publicUrl || `http://localhost:${finalAssignedPort}`;
+
+          if (liveAppUrl) {
             await prisma.project.update({
               where: { id: project.id },
-              data: { publicUrl: publicUrl }
+              data: { publicUrl: liveAppUrl }
             });
           }
 
           emitDeploymentEvent(deploymentId, 'deployment:status', {
             status: 'Running',
             url: `http://localhost:${finalAssignedPort}`,
-            publicUrl: publicUrl || null
+            publicUrl: liveAppUrl
           });
           emitDeploymentEvent(deploymentId, 'deployment:completed', { 
             url: `http://localhost:${finalAssignedPort}`,
-            publicUrl: publicUrl || null
+            publicUrl: liveAppUrl
           });
           
           // Notify user
           await NotificationService.createNotification(
             userId,
             `Deployment Successful: ${project.name}`,
-            `Version v${project.Deployment?.length ? project.Deployment.length + 1 : 1} is now running.`,
+            `Version v${project.Deployment?.length ? project.Deployment.length + 1 : 1} is now running at ${liveAppUrl}`,
             'SUCCESS'
           ).catch(() => {});
 
@@ -1046,7 +1048,8 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
             where: { id: project.id },
             data: { 
               status: 'Active',
-              port: finalAssignedPort
+              port: finalAssignedPort,
+              publicUrl: liveAppUrl
             }
           });
           emitToUser(userId, 'project:updated', { projectId: project.id, status: 'Active', port: finalAssignedPort });

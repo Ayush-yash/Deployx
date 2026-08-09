@@ -338,6 +338,34 @@ const DeploymentDetails: React.FC = () => {
 
       <motion.div variants={staggerItem} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <motion.div variants={staggerItem} className="lg:col-span-2 space-y-6">
+          {(liveStatus === 'Running' || liveStatus === 'Active' || liveStatus === 'Success' || liveStatus === 'Deployed') && (
+            <GlassCard className="p-6 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-purple-500/10 border-emerald-500/30">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                    <CheckCircle2 className="w-6 h-6 animate-pulse" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                      Deployment Live & Ready!
+                    </h3>
+                    <p className="text-sm text-slate-300">
+                      Your application is running on <code className="bg-slate-900/80 text-emerald-400 px-2 py-0.5 rounded font-mono border border-emerald-500/30">{liveUrl || (deployment.assignedPort ? `http://localhost:${deployment.assignedPort}` : 'Active Port')}</code>
+                    </p>
+                  </div>
+                </div>
+                <a 
+                  href={liveUrl || (deployment.assignedPort ? `http://localhost:${deployment.assignedPort}` : '#')} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 transition-all transform hover:scale-105"
+                >
+                  <ExternalLink className="w-5 h-5" /> Visit Live Application
+                </a>
+              </div>
+            </GlassCard>
+          )}
+
           <GlassCard className="p-6">
             <h3 className="text-lg font-semibold text-white border-b border-slate-700/50 pb-2 mb-4 flex items-center gap-2">
               <Terminal className="w-5 h-5 text-blue-400" />
