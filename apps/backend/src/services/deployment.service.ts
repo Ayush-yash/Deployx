@@ -415,9 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       // -----------------------------------------------------
 
-      // Setup Dockerfile if provided via DeployX UI overrides
+      // Setup Dockerfile if provided via DeployX UI overrides (ignore dummy generated Dockerfiles)
       const dockerfilePath = path.join(workspace, 'Dockerfile');
-      if (project.dockerfileContent && !project.dockerfileContent.includes('FROM node:20-alpine AS builder') && !project.dockerfileContent.includes('FROM node:20-alpine\nWORKDIR')) {
+      if (
+        project.dockerfileContent && 
+        !project.dockerfileContent.includes('No specific framework detected') &&
+        !project.dockerfileContent.includes('FROM node:20-alpine AS builder') && 
+        !project.dockerfileContent.includes('FROM node:20-alpine\nWORKDIR')
+      ) {
         emitLog('INFO', 'Writing custom project Dockerfile configuration from DeployX UI...');
         await fs.writeFile(dockerfilePath, project.dockerfileContent);
         emitLog('SUCCESS', 'Custom Dockerfile configured.');

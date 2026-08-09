@@ -469,9 +469,11 @@ CMD ["./main"]`;
     }
 
     // Default Fallback
-    return `FROM alpine:latest
+    return `FROM node:20-alpine
 WORKDIR /app
 COPY . .
-CMD ["echo", "No specific framework detected."]`;
+RUN if [ -f package.json ]; then npm install --legacy-peer-deps; fi
+EXPOSE 3000 8080 5000 80
+CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
   }
 }
