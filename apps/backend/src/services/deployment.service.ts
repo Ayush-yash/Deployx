@@ -75,7 +75,7 @@ async function provisionPublicTunnel(
   
   try {
     emitLog('INFO', `Provisioning permanent URL with fixed subdomain (${fixedSubdomain})...`);
-    const lt = await localtunnel({ port, subdomain: fixedSubdomain, local_host: '127.0.0.1' });
+    const lt = await localtunnel({ port, subdomain: fixedSubdomain, local_host: 'host.docker.internal' });
     activeTunnels.set(deploymentId, lt);
     
     lt.on('close', () => {
@@ -677,9 +677,15 @@ CMD ["nginx", "-g", "daemon off;"]`;
                   const fallbackDockerfile = `FROM node:20-alpine
 WORKDIR /app
 COPY . .
-RUN if [ -f package.json ]; then npm install --legacy-peer-deps; fi
+RUN npm i -g concurrently && npm i http-proxy-middleware express@4
+RUN if [ -d backend ]; then cd backend && npm install --legacy-peer-deps && (npm run build || true); elif [ -d apps/backend ]; then cd apps/backend && npm install --legacy-peer-deps && (npm run build || true); fi
+RUN if [ -d frontend ]; then cd frontend && npm install --legacy-peer-deps react-is recharts && (npm run build || npx vite build || true); elif [ -d apps/frontend ]; then cd apps/frontend && npm install --legacy-peer-deps react-is recharts && (npm run build || npx vite build || true); fi
+RUN echo "const express = require('express'); const { createProxyMiddleware } = require('http-proxy-middleware'); const path = require('path'); const app = express(); const fs = require('fs'); app.use('/api', createProxyMiddleware({ target: 'http://127.0.0.1:8000', changeOrigin: true })); const distDir = fs.existsSync(path.join(__dirname, 'frontend/dist')) ? 'frontend/dist' : (fs.existsSync(path.join(__dirname, 'apps/frontend/dist')) ? 'apps/frontend/dist' : ''); if (distDir) { app.use(express.static(path.join(__dirname, distDir))); app.get('*', (req, res) => res.sendFile(path.join(__dirname, distDir, 'index.html'))); } app.listen(3000, '0.0.0.0', () => console.log('Proxy running on 3000'));" > proxy.js
+EXPOSE 3000
+ENV PORT=3000
+ENV HOST=0.0.0.0
 EXPOSE 3000 8080 5000 80
-CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
+CMD if ([ -d frontend ] || [ -d apps/frontend ]) && ([ -d backend ] || [ -d apps/backend ]); then concurrently "if [ -d backend ]; then cd backend; else cd apps/backend; fi && (PORT=8000 node dist/index.js || PORT=8000 npx tsx src/index.ts || PORT=8000 npx tsx src/server.ts || PORT=8000 npm start)" "node proxy.js"; elif [ -f package.json ]; then (node dist/index.js || npx tsx src/index.ts || npx tsx src/server.ts || npm start); elif [ -d backend ]; then cd backend && (node dist/index.js || npx tsx src/index.ts || npx tsx src/server.ts || npm start); elif [ -d apps/backend ]; then cd apps/backend && (node dist/index.js || npx tsx src/index.ts || npx tsx src/server.ts || npm start); else node index.js; fi`;
 
                   await fs.writeFile(path.join(workspace, 'Dockerfile'), fallbackDockerfile);
                }
@@ -897,6 +903,10 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
         }
       }
 
+      runCmd.push(`-e MONGO_URI="mongodb://host.docker.internal:27017/${project.name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}"`);
+      runCmd.push(`-e DATABASE_URL="postgresql://postgres:postgres@host.docker.internal:5433/${project.name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}"`);
+      runCmd.push(`-e JWT_SECRET="deployx-default-secret-key-12345"`);
+      runCmd.push(`--add-host host.docker.internal:host-gateway`);
       runCmd.push(imageName);
 
         await streamCommand(runCmd.join(' '));
@@ -956,7 +966,7 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
                    break;
                 }
 
-                await fetch(`http://localhost:${finalAssignedPort}`);
+                await fetch(`http://host.docker.internal:${finalAssignedPort}`);
                 isHealthy = true;
                 break;
              } catch (err: any) {
@@ -1016,13 +1026,13 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
               assignedPort: finalAssignedPort,
               imageName: imageName,
               containerName: containerName,
-              localUrl: `http://localhost:${finalAssignedPort}`,
+              localUrl: `http://host.docker.internal:${finalAssignedPort}`,
               publicUrl: publicUrl || null,
               completedAt: new Date()
             }
           });
 
-          const liveAppUrl = publicUrl || `http://localhost:${finalAssignedPort}`;
+          const liveAppUrl = publicUrl || `http://host.docker.internal:${finalAssignedPort}`;
 
           if (liveAppUrl) {
             await prisma.project.update({
@@ -1033,11 +1043,11 @@ CMD if [ -f package.json ]; then npm start; else tail -f /dev/null; fi`;
 
           emitDeploymentEvent(deploymentId, 'deployment:status', {
             status: 'Running',
-            url: `http://localhost:${finalAssignedPort}`,
+            url: `http://host.docker.internal:${finalAssignedPort}`,
             publicUrl: liveAppUrl
           });
           emitDeploymentEvent(deploymentId, 'deployment:completed', { 
-            url: `http://localhost:${finalAssignedPort}`,
+            url: `http://host.docker.internal:${finalAssignedPort}`,
             publicUrl: liveAppUrl
           });
           
