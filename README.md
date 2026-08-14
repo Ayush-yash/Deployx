@@ -14,6 +14,18 @@
 
 <hr />
 
+## 📍 Table of Contents
+
+- [📖 About The Project](#-about-the-project)
+- [✨ Key Features](#-key-features)
+- [🏗️ Project Structure](#%EF%B8%8F-project-structure)
+- [🚀 Getting Started](#-getting-started)
+- [🎯 How to Deploy an App](#-how-to-deploy-an-app)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+
+---
+
 ## 📖 About The Project
 
 DeployX is a powerful, self-hosted Platform-as-a-Service (PaaS) solution designed to simplify the deployment, scaling, and management of modern web applications. Think of it as your own self-hosted Vercel or Railway! 
