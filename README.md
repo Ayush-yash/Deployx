@@ -102,6 +102,47 @@ Ensure you have the following installed on your local machine:
 
 ### 🛠️ Installation & Setup
 
+Choose one of the following methods to run DeployX locally:
+
+#### Option 1: Quick Start with Docker Compose (Recommended)
+
+This is the easiest way to run the entire stack (Frontend, Backend, Database) automatically.
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Ayush-yash/Deployx.git
+   cd Deployx
+   ```
+
+2. **Configure Environment Variables:**
+   - Copy the `.env.example` to `.env` in `apps/backend/`:
+     ```bash
+     cp apps/backend/.env.example apps/backend/.env
+     ```
+   - Open `apps/backend/.env` and setup your **GitHub OAuth App** credentials (`GITHUB_CLIENT_ID` & `GITHUB_CLIENT_SECRET`).
+
+3. **Start the Platform:**
+   ```bash
+   docker-compose up -d --build
+   ```
+   *(This will build and spin up the React frontend, Node backend, and PostgreSQL containers concurrently)*
+
+4. **Initialize Database Tables:**
+   Once the containers are running, run the following command to push the database schema:
+   ```bash
+   docker exec -it cloudmanagment-backend-1 npx prisma db push
+   ```
+
+5. **Access the Platform:**
+   - **Frontend Dashboard:** [http://localhost:5173](http://localhost:5173)
+   - **Backend API:** [http://localhost:3000](http://localhost:3000)
+
+---
+
+#### Option 2: Local Development Setup (Manual)
+
+Use this method if you want to run the services natively on your host machine.
+
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/Ayush-yash/Deployx.git
@@ -109,15 +150,14 @@ Ensure you have the following installed on your local machine:
    ```
 
 2. **Install all dependencies:**
-   *(This will install dependencies for both frontend and backend automatically)*
+   *(This will install dependencies for both frontend and backend workspace apps)*
    ```bash
    npm install
    ```
 
 3. **Configure Environment Variables:**
-   - Navigate to `apps/backend/` and `apps/frontend/`.
-   - Copy `.env.example` to `.env`.
-   - Setup your **GitHub OAuth App** credentials and **Database URL**.
+   - **Backend:** Copy `apps/backend/.env.example` to `apps/backend/.env` and configure your **GitHub OAuth App** and `DATABASE_URL` (pointing to your local Postgres port `5433` or `5432`).
+   - **Frontend:** Copy `apps/frontend/.env.example` to `apps/frontend/.env` (default is `VITE_API_URL=http://localhost:3000/api`).
 
 4. **Initialize the Database:**
    ```bash
@@ -128,7 +168,7 @@ Ensure you have the following installed on your local machine:
    ```
 
 5. **Start the Platform:**
-   Start both the frontend and backend servers concurrently from the root directory:
+   Start both the frontend and backend servers concurrently:
    ```bash
    npm run dev
    ```
