@@ -80,13 +80,13 @@ DeployX/
 ## 📸 Screenshots
 
 ### 📊 Dashboard Overview
-![Dashboard Overview](assets/dashboard.png)
+![Dashboard Overview](assets/dashboard_healthy.png)
 
 ### 📁 Projects Management
-![Projects Management](assets/projects.png)
+![Projects Management](assets/projects_healthy.png)
 
 ### 🚀 Real-time Deployment Details
-![Deployment Details](assets/deployment.png)
+![Deployment Details](assets/deployment_healthy.png)
 
 ---
 
