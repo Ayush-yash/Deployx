@@ -14,8 +14,8 @@ pipeline {
                     cp apps/frontend/.env.example apps/frontend/.env
                     cp apps/backend/.env.example apps/backend/.env
                     
-                    # Yahan YOUR_EC2_IP ki jagah apna asali AWS Public IP daal dena
-                    sed -i 's|http://localhost:3000|http://YOUR_EC2_IP:3000|g' apps/frontend/.env
+                    
+                    sed -i 's|http://localhost:3000|http://YOUR_EC2_IP:3002|g' apps/frontend/.env
                     sed -i 's|localhost:5433|postgres:5432|g' apps/backend/.env
                 '''
             }
