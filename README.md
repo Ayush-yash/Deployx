@@ -46,6 +46,19 @@ Whether you are deploying a simple React app or a complex full-stack Kubernetes 
 
 ---
 
+## 🛠️ DevOps & Cloud Architecture
+
+DeployX is built with a highly scalable Industrial DevOps architecture:
+
+- **CI/CD Pipeline:** Automated using **Jenkins** and GitHub Webhooks.
+- **Containerization:** Core execution engine powered by **Docker** & **Docker-Compose**.
+- **Cloud Infrastructure:** Hosted on **AWS EC2** (Ubuntu).
+- **Cloud Storage:** Secure backups maintained using **AWS S3** and IAM policies.
+- **Observability:** Real-time container metrics using **Prometheus**, **cAdvisor**, and **Grafana**.
+- **Alerting:** CPU utilization alerts configured via **AWS CloudWatch** & SNS.
+
+---
+
 ## 🏗️ Project Structure
 
 DeployX is built as a **Monorepo** using npm workspaces to keep the frontend and backend tightly integrated.
